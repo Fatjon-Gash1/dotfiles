@@ -21,7 +21,7 @@ Enjoy this configured rice! 🙂 🚀
    _All included in this repo!_
 
 > [!CAUTION]
-> Some of the configured files may have additional settings and require external dependencies.
+> Some of the configured files may have additional settings and require external dependencies.  
 > Make sure to carefully review the files you want to use.
 
  ## Usage: 
