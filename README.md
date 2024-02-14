@@ -17,7 +17,7 @@ Enjoy this configured rice! 🙂 🚀
   *  Swaylock - Lock-screen utility.
   *  pywal - Generate color-schemes.
 
-   These are some of the tools that i use and have customized for my productivity workflow.
+   These are some of the tools that i use and have customized for my productivity workflow.  
    _All included in this repo!_
 
 > [!CAUTION]
