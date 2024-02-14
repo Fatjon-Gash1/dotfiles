@@ -6,8 +6,7 @@ Enjoy this configured rice! 🙂 🚀
 
 ![Workflow](/images/sc_14.02.2024_144609.png)
 
-## These are some of the tools that i use and have customized for my productivity workflow. 
-### They are all included in this repo:
+### These are some of the tools that i use and have customized for my productivity workflow. 
 
   *  Hyprland - Tiling window manager.
   *  Waybar - Highly customizable status bar.
@@ -17,6 +16,8 @@ Enjoy this configured rice! 🙂 🚀
   *  rofi - Application launcher and dmenu replacement.
   *  Swaylock - Lock-screen utility.
   *  pywal - Generate color-schemes.
+
+   All included in this repo!
 
 > [!CAUTION]
 > Some of the configured files may have additional settings and require external dependencies.
