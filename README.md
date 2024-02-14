@@ -22,10 +22,10 @@ Enjoy this configured rice! 🙂 🚀
 > Make sure to carefully review the files you want to use.
 
  ## Usage: 
- '''
-  $ git clone https://github.com/Fatjon-Gash1/Dotfiles.git ~/.Dotfiles
-  $ ~/.Dotfiles/install.sh
- '''
+ ```
+ $ git clone https://github.com/Fatjon-Gash1/Dotfiles.git ~/.Dotfiles
+ $ ~/.Dotfiles/install.sh
+ ```
 
 > [!WARNING]
 > Before executing the script make sure that you have removed the specific folders from the '~/.config' directory. 
