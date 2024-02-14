@@ -6,7 +6,7 @@ Enjoy this configured rice! 🙂 🚀
 
 ![Workflow](/images/sc_14.02.2024_144609.png)
 
-### These are some of the tools that i use and have customized for my productivity workflow. 
+## These are some of the tools that i use and have customized for my productivity workflow. 
 
   *  Hyprland - Tiling window manager.
   *  Waybar - Highly customizable status bar.
