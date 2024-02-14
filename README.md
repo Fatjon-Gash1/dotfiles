@@ -28,4 +28,4 @@ Enjoy this configured rice! 🙂 🚀
  ```
 
 > [!WARNING]
-> Before executing the script make sure that you have removed the specific folders from the '~/.config' directory. 
+> Before executing the script make sure that you have removed the specific folders from the `~/.config` directory. 
