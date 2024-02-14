@@ -1,0 +1,11 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.coding.tabnine",
+    "lazyvim.plugins.extras.formatting.prettier",
+    "lazyvim.plugins.extras.lang.java"
+  ],
+  "news": {
+    "NEWS.md": "2123"
+  },
+  "version": 2
+}

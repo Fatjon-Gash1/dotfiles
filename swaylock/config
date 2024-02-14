@@ -1,0 +1,68 @@
+ignore-empty-password
+show-failed-attempts
+
+font="Source Code Pro"
+
+clock
+timestr=%H:%M:%S
+datestr=Locked
+
+# Add current screenshot as wallpaper
+screenshots
+
+# Add an image as a background 
+# image=~/.cache/current_wallpaper.jpg
+
+# Fade in time
+#fade-in=1
+
+# Effect for background
+effect-blur=10x2
+# effect-greyscale
+# effect-pixelate=5
+
+# Show/Hide indicator circle
+indicator
+
+# smaller indicator
+indicator-radius=120
+
+# bigger indicator
+# indicator-radius=300
+
+indicator-thickness=5
+indicator-caps-lock
+
+# Define all colors
+
+key-hl-color=00000060
+separator-color=00000000
+
+inside-color=00000080
+inside-clear-color=00000070
+inside-caps-lock-color=00000070
+inside-ver-color=00000070
+inside-wrong-color=00000070
+
+ring-color=ff000050
+ring-clear-color=ff000050
+ring-caps-lock-color=ffb01f50
+ring-ver-color=00FF0050
+ring-wrong-color=ff000050
+
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+text-color=ffffff
+text-clear-color=ffffff
+text-ver-color=00FF0070
+text-wrong-color=ff000070
+
+bs-hl-color=00000060
+caps-lock-key-hl-color=00000060
+caps-lock-bs-hl-color=00000060
+disable-caps-lock-text
+text-caps-lock-color=ffffff

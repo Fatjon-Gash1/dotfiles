@@ -1,0 +1,19 @@
+{
+
+    "layer": "top", 
+    "height": 30, 
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-bottom": 0,
+
+
+    "include": ["~/.config/waybar/modules.jsonc"],
+
+    "modules-left": ["hyprland/workspaces", "clock#time", "clock#date", "battery"],
+
+    "modules-center": ["hyprland/window"],
+
+    "modules-right": ["tray", "temperature", "cpu", "memory", "wireplumber"]
+}
+

@@ -1,0 +1,51 @@
+@import "~/.cache/wal/colors-rofi-dark"
+
+* {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+window {
+	background-color: rgba(0, 0, 0, 0);
+	padding: 1ch;
+	width: 25%;
+	height: 35%;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+element-icon {
+    size: 1em;
+}
+
+textbox-prompt-colon {
+	str: "";
+}
+
+listview {
+	border: 0;	
+	scrollbar: false;
+}
+
+element {
+  	orientation: horizontal;
+  	children: [ element-icon, element-text ];
+  	spacing: 5px;
+}
+
+element.normal.normal {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+element.selected.normal {
+	border-radius: 5px;
+}
+
+element.alternate.normal {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+entry {
+	placeholder: "";
+}
