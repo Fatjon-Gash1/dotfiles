@@ -25,7 +25,7 @@ if status is-interactive
     alias t touch
     alias ll 'exa --header --long --extended --group-directories-first --no-user --no-permissions --icons'
     alias v nvim
-    alias rbackup 'rsync -avh --progress --exclude={"/data/*","/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} --delete / /data/backup/'
+    alias rbackup 'sudo rsync -avh --progress --exclude={"/data/*","/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} --delete / /data/backup/'
 
     # Themes
     #set -g theme_display_user yes
