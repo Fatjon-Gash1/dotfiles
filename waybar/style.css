@@ -1,95 +1,97 @@
-@import 'colors-waybar.css';
+@import "colors-waybar.css";
 
 * {
-	font-family: FontAwesome, feather;
-	font-weight: 500;
-	font-size: 12pt;
-	color: #ffffff;
-	margin: 1px;
+  font-family: FontAwesome, feather;
+  font-weight: 500;
+  font-size: 12pt;
+  color: #ffffff;
+  margin: 1px;
 }
 
 window#waybar {
-	border-radius: 19px;
-	background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 19px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 tooltip {
-	background: #1e1e2e;
+  background: #1e1e2e;
 }
 
 #workspaces {
-	margin: 1px 0 1px 1em;
-	border-radius: 10px;
+  margin: 1px 0 1px 1em;
+  border-radius: 10px;
 }
 
 #workspaces button {
-	margin: 1px 7px;
-	padding: 2px;
+  margin: 1px 7px;
+  padding: 2px;
 }
 
 #workspaces button.focused {
-	color: #a6adc8;
+  color: #a6adc8;
 }
 
 #workspaces button.urgent {
-	color: #f7768e;
+  color: #f7768e;
 }
 
 #workspaces button:hover {
-	background-color: transparent;
-	border-color: transparent;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 #clock {
-	padding: 2px 10px;
-	margin: 1px 0 1px 1em;
-	font-size: 18px;
+  padding: 2px 10px;
+  margin: 1px 0 1px 1em;
+  font-size: 18px;
 }
 
-#temperature, #cpu, #memory, #wireplumber {
-	font-size: 15px;
-	padding: 0 10px;
-	margin: 1px 0 1px 0;
-	color: @color11;
-	background-color: rgba(0, 0, 0, 0.3);
+#temperature,
+#cpu,
+#memory,
+#wireplumber {
+  font-size: 15px;
+  padding: 0 10px;
+  margin: 1px 0 1px 0;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 #cpu {
-	border-radius: 15px 0 0 15px;
+  border-radius: 15px 0 0 15px;
 }
 
 #battery {
-	background: rgba(0, 0, 0, 0.8);
-	border: 0;
+  background: rgba(0, 0, 0, 0.8);
+  border: 0;
 }
 
 #wireplumber {
-	margin-right: 1em;
-	border-radius: 0 15px 15px 0;
+  margin-right: 1em;
+  border-radius: 0 15px 15px 0;
 }
 
 window#waybar.empty #window {
-	padding: 0px;
-	margin: 0px;
-	border: 0px;
-	background-color: transparent;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  background-color: transparent;
 }
 
 #tray {
-	border-radius: 8px;
-	margin-right: 10px;
+  border-radius: 8px;
+  margin-right: 10px;
 }
 
 #window {
-	padding: 2px 10px;
-	margin: 1px;
+  padding: 2px 10px;
+  margin: 1px;
 }
 
 #temperature {
-	border-radius: 8px 0 0 8px;
+  border-radius: 8px 0 0 8px;
 }
 
 #battery {
-	border-radius: 0 8px 8px 0;
+  border-radius: 0 8px 8px 0;
 }
-
