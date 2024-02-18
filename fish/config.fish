@@ -26,6 +26,11 @@ if status is-interactive
     alias ll 'exa --header --long --extended --group-directories-first --no-user --no-permissions --icons'
     alias v nvim
     alias rbackup 'sudo rsync -avh --progress --exclude={"/data/*","/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} --delete / /data/backup/'
+    alias ga 'git add'
+    alias gs 'git status'
+    alias gp 'git pull'
+    alias gpp 'git push'
+    alias gc 'git commit -m'
 
     # Themes
     #set -g theme_display_user yes
