@@ -2,7 +2,7 @@
   // Modules configuration
   "clock#time": {
     "format": "<span color=\"#ffffff\">{:%H:%M:%S}</span>",
-    "interval": 1
+    "interval": 1,
   },
   "clock#date": {
     "format": "<span color=\"#ffffff\">{:%d/%m/%Y}</span>",
@@ -19,16 +19,16 @@
         "days": "<span color='#c0caf5'><b>{}</b></span>",
         "weeks": "<span color='#7dcfff'><b>W{}</b></span>",
         "weekdays": "<span color='#ff9e64'><b>{}</b></span>",
-        "today": "<span color='#f7768e'><b><u>{}</u></b></span>"
-      }
-    }
+        "today": "<span color='#f7768e'><b><u>{}</u></b></span>",
+      },
+    },
   },
   "battery": {
     "bat": "BAT0",
     "interval": 60,
     "states": {
       "warning": 40,
-      "critical": 20
+      "critical": 20,
     },
     "format": "{icon} {capacity}%",
     "format-icons": [
@@ -36,49 +36,49 @@
       "<span color=\"#f7768e\"> </span>",
       "<span color=\"#0096aa\"> </span>",
       "<span color=\"#0096aa\"> </span>",
-      "<span color=\"#0096aa\"> </span>"
+      "<span color=\"#0096aa\"> </span>",
     ],
-    "format-charging": "<span color=\"#e0af68\">󱐌</span> {capacity}%"
+    "format-charging": "<span color=\"#e0af68\">󱐌</span> {capacity}%",
   },
   "cpu": {
     "format": "\uf4bc  <span color=\"#ffffff\">{usage}%</span>",
-     "interval": 4,
-     "on-click": "alacritty -e htop"
+    "interval": 4,
+    "on-click": "alacritty -e htop",
   },
   "memory": {
     "format": "  <span color=\"#ffffff\">{used}GB</span>",
     "interval": 4,
-     "on-click": "alacritty -e htop"
+    "on-click": "alacritty -e htop",
   },
   "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
     "critical-threshold": 80,
     "format": " <span color=\"#ffffff\">{temperatureC}°C</span>",
     "format-critical": "crit <span color=\"#ffffff\">{temperatureC}°C</span>",
-    "interval": 4
+    "interval": 4,
   },
   "wireplumber": {
     "scroll-step": 5, // %, can be a float
     "format": "{icon} <span color=\"#ffffff\"> {volume}%</span>",
     "format-muted": "x <span color=\"#ffffff\">Muted</span>",
     "format-icons": ["", "", ""],
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
   },
   "hyprland/window": {
-    "max-length": 96
+    "max-length": 96,
   },
   "tray": {
     "icon-size": 22,
-    "spacing": 6
+    "spacing": 6,
   },
   "hyprland/workspaces": {
     "format": "{icon}",
     "disable-scroll": true,
     "on-click": "activate",
-      "format-icons": {
-    	"urgent": "",
-    	"active": "⬤",
-	"default": "◯"
-  	}
-  }
+    "format-icons": {
+      "urgent": "",
+      "active": "⬤",
+      "default": "◯",
+    },
+  },
 }
