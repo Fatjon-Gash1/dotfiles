@@ -10,5 +10,5 @@ source "$HOME/.cache/wal/colors.sh"
 cp ~/.cache/wal/colors-waybar.css ~/.config/waybar/
 
 # Set the new wallpaper
-swww img $wallpaper --transition-type wipe --transition-duration 1 --transition-fps 60 --transition-bezier .42,0,.58,1
+swww img $wallpaper --transition-type wipe --transition-duration 1 --transition-fps 30 --transition-bezier .42,0,.58,1
 ~/.config/waybar/launch_wb.sh
