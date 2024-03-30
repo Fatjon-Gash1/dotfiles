@@ -17,7 +17,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 
     # Aliases
-    alias cls clear
+    alias cl clear
     alias op open
     alias cd.. 'cd ..'
     alias md mkdir
@@ -31,6 +31,8 @@ if status is-interactive
     alias gp 'git pull'
     alias gpp 'git push'
     alias gc 'git commit -m'
+    alias gr 'git rm'
+    alias gm 'git mv'
 
     # Themes
     #set -g theme_display_user yes
