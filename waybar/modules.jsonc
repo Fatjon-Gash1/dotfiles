@@ -65,7 +65,8 @@
     "on-click": "pavucontrol",
   },
   "hyprland/window": {
-    "max-length": 96,
+    "format": "<span color=\"#90EE90\">{}</span> ",
+    "max-length": 30,
   },
   "tray": {
     "icon-size": 22,
