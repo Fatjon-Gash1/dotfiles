@@ -5,10 +5,13 @@
 }
 
 window {
-	background-color: rgba(0, 0, 0, 0);
-	padding: 1ch;
+	background-color: rgba(0, 0, 0, 0.3);
+ 	padding: 1ch;
 	width: 25%;
 	height: 35%;
+  border: 2px solid;
+  border-color: white;
+  border-radius: 10px;
 }
 
 element-text {
@@ -24,8 +27,8 @@ textbox-prompt-colon {
 }
 
 listview {
-	border: 0;	
-	scrollbar: false;
+  border: 0;	
+  scrollbar: false;
 }
 
 element {
