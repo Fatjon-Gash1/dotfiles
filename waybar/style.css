@@ -1,25 +1,23 @@
 @import "colors-waybar.css";
 
 * {
-  font-family: FontAwesome, feather;
+  font-family: Verdana, sans-serif;
   font-weight: 500;
-  font-size: 12pt;
   color: #ffffff;
   margin: 1px;
 }
 
 window#waybar {
   border-radius: 19px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 tooltip {
-  background: #1e1e2e;
+  background: #000000;
 }
 
 #workspaces {
   margin: 1px 0 1px 1em;
-  border-radius: 10px;
 }
 
 #workspaces button {
@@ -41,9 +39,16 @@ tooltip {
 }
 
 #clock {
-  padding: 2px 10px;
-  margin: 1px 0 1px 1em;
-  font-size: 18px;
+  padding: 0 10px;
+  margin: 4px 0;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+}
+
+#clock.date {
+  margin-left: 2em;
+  margin-right: 1em;
 }
 
 #temperature,
@@ -52,23 +57,23 @@ tooltip {
 #wireplumber {
   font-size: 15px;
   padding: 0 10px;
-  margin: 1px 0 1px 0;
+  margin: 4px 0;
   color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 #cpu {
   border-radius: 15px 0 0 15px;
 }
 
+#wireplumber {
+  border-radius: 0 15px 15px 0;
+  margin-right: 2em;
+}
+
 #battery {
   background: rgba(0, 0, 0, 0.8);
   border: 0;
-}
-
-#wireplumber {
-  margin-right: 1em;
-  border-radius: 0 15px 15px 0;
 }
 
 window#waybar.empty #window {
@@ -84,8 +89,12 @@ window#waybar.empty #window {
 }
 
 #window {
-  padding: 2px 10px;
-  margin: 1px;
+  padding: 0 10px;
+  margin: 4px;
+  margin-left: 1em;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  font-size: 16px;
 }
 
 #temperature {
