@@ -16,13 +16,8 @@ tooltip {
   background: #000000;
 }
 
-#workspaces {
-  margin: 1px 0 1px 1em;
-}
-
 #workspaces button {
-  margin: 1px 7px;
-  padding: 2px;
+  margin: 1px 5px;
 }
 
 #workspaces button.focused {
