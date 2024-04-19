@@ -62,7 +62,7 @@
     "format": "{icon} <span color=\"#ffffff\"> {volume}%</span>",
     "format-muted": "x <span color=\"#ffffff\">Muted</span>",
     "format-icons": ["", "", ""],
-    "on-click": "pavucontrol",
+    "on-click": "~/.config/scripts/changeAudio.sh",
   },
   "hyprland/window": {
     "format": "<span color=\"#90EE90\">{}</span> ",
