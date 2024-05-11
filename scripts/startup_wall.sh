@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sleep 0.3
 # Select random walpaper
 wal -q -i ~/Pictures/Wallpapers/
 
