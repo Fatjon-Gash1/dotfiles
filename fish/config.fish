@@ -29,7 +29,7 @@ if status is-interactive
     alias ga 'git add'
     alias gs 'git status'
     alias gp 'git pull'
-    alias gpp 'git push'
+    alias gps 'git push'
     alias gc 'git commit -m'
     alias gr 'git rm'
     alias gm 'git mv'
