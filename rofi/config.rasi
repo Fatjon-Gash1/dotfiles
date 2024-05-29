@@ -7,9 +7,9 @@
 window {
 	background-color: rgba(0, 0, 0, 0.3);
  	padding: 1ch;
-	width: 25%;
-	height: 35%;
-  border: 2px solid;
+	width: 35%;
+	height: 15%;
+  border: 1px solid;
   border-color: white;
   border-radius: 10px;
 }
