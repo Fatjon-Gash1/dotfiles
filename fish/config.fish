@@ -34,13 +34,6 @@ if status is-interactive
     alias gm 'git mv'
     alias gr 'git rm'
 
-    # Themes
-    #set -g theme_display_user yes
-    #set -g color_user_bg 005b96
-    #set -g color_user_str white
-    #set -g color_dir_bg 0086ad
-    #set -g color_dir_str black
-
 end
 
 starship init fish | source
