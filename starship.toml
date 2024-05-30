@@ -2,11 +2,15 @@ format = """
 $directory\
 $git_branch\
 $git_status\
+$docker_context\
 $nodejs\
 $rust\
 $golang\
+$java\
 $php\
-[--](fg:#ffffff)\ 
+$python\
+[:](fg:#ffffff)\ 
+$time\
 $character"""
 
 [directory]
@@ -30,28 +34,43 @@ format = '[[ $symbol $branch ](fg:#1cad5d)]($style)'
 style = "fg:#e0d41f"
 format = '[[($all_status$ahead_behind )](fg:#e0d41f)]($style)'
 
+[docker_context]
+symbol = ""
+style = "fg:#0096ff"
+format = '[[ $symbol $context ](fg:#0096ff)]($style)'
+
 [nodejs]
 symbol = ""
-style = "fg:#eded5a"
-format = '[[ $symbol ($version) ](fg:#eded5a)]($style)'
+style = "fg:#80C829"
+format = '[[ $symbol ($version) ](fg:#80C829)]($style)'
 
 [rust]
 symbol = ""
-style = "fg:#eded5a"
-format = '[[ $symbol ($version) ](fg:#eded5a)]($style)'
+style = "fg:#ffa500"
+format = '[[ $symbol ($version) ](fg:#ffa500)]($style)'
 
 [golang]
 symbol = ""
-style = "fg:#eded5a"
-format = '[[ $symbol ($version) ](fg:#eded5a)]($style)'
+style = "fg:#7df9ff"
+format = '[[ $symbol ($version) ](fg:#7df9ff)]($style)'
+
+[java]
+symbol = ""
+style = "fg:#e50000"
+format = '[[ $symbol ($version) ](fg:#e50000)]($style)'
 
 [php]
 symbol = ""
-style = "fg:#eded5a"
-format = '[[ $symbol ($version) ](fg:#eded5a)]($style)'
+style = "fg:#7393b3"
+format = '[[ $symbol ($version) ](fg:#7393b3)]($style)'
+
+[python]
+symbol = ""
+style = "fg:#ffea00"
+format = '[[ $symbol ($version) ](fg:#ffea00)]($style)'
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+style = "fg:#ffffff"
+format = '[[  $time ](fg:#ffffff)]($style)'
