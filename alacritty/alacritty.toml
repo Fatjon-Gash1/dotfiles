@@ -3,7 +3,7 @@ family = "SauceCodePro Nerd Font"
 
 [window]
 opacity = 0.6
+dynamic_padding = true
 
 [window.padding]
-x = 5
-y = 10
+y = 5
