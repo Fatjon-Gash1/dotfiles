@@ -72,5 +72,5 @@ format = '[[ $symbol ($version) ](fg:#ffea00)]($style)'
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "fg:#ffffff"
-format = '[[  $time ](fg:#ffffff)]($style)'
+style = "fg:#ededed"
+format = '[[  $time ](fg:#ededed)]($style)'
