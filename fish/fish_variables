@@ -2,14 +2,20 @@
 # VERSION: 3.0
 SETUVAR --export GTK_ICON_THEME:Papirus\x2dDark
 SETUVAR --export XDG_CURRENT_DESKTOP:Unity
+SETUVAR ZO_CMD:zo
+SETUVAR Z_CMD:z
+SETUVAR Z_DATA:/home/fatjon/\x2elocal/share/z/data
+SETUVAR Z_DATA_DIR:/home/fatjon/\x2elocal/share/z
+SETUVAR Z_EXCLUDE:\x5e/home/fatjon\x24
 SETUVAR __fish_initialized:3400
+SETUVAR _fisher_jethrokuan_2F_z_files:\x7e/\x2econfig/fish/functions/__z\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_add\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_clean\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_complete\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/z\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejethrokuan/z
 SETUVAR _fisher_upgraded_to_4_4:\x1d
-SETUVAR fish_color_autosuggestion:808080
+SETUVAR fish_color_autosuggestion:9e9e9e
 SETUVAR fish_color_cancel:\x2d\x2dreverse
 SETUVAR fish_color_command:5fd7d7
-SETUVAR fish_color_comment:5C6773
+SETUVAR fish_color_comment:808080
 SETUVAR fish_color_cwd:73D0FF
 SETUVAR fish_color_cwd_root:red
 SETUVAR fish_color_end:F29E74
@@ -25,7 +31,7 @@ SETUVAR fish_color_operator:FFCC66
 SETUVAR fish_color_option:\x1d
 SETUVAR fish_color_param:e4e4e4
 SETUVAR fish_color_quote:5fd787
-SETUVAR fish_color_redirection:D4BFFF
+SETUVAR fish_color_redirection:d75fd7
 SETUVAR fish_color_search_match:\x2d\x2dbackground\x3dFFCC66
 SETUVAR fish_color_selection:\x2d\x2dbackground\x3dFFCC66
 SETUVAR fish_color_status:red
