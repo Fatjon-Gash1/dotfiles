@@ -22,6 +22,7 @@ if status is-interactive
     alias md mkdir
     alias rd rmdir
     alias t touch
+    alias fv 'find . -type f | peco | xargs nvim'
     alias ll 'exa --header --long --extended --group-directories-first --no-user --no-permissions --icons'
     alias v nvim
     alias rbackup 'sudo rsync -avh --progress --exclude={"/data/*","/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} --delete / /data/backup/'
