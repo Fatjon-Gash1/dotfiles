@@ -22,8 +22,11 @@ return require("packer").startup(function(use)
 	use("tpope/vim-fugitive")
 	use("pocco81/auto-save.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
-	use("stevearc/conform.nvim")
+	use("norcalli/nvim-colorizer.lua")
+
+	-- linter & formatter
 	use("mfussenegger/nvim-lint")
+	use("stevearc/conform.nvim")
 
 	-- Completion
 	use("hrsh7th/nvim-cmp")
