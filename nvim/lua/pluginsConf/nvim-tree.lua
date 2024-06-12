@@ -4,7 +4,6 @@ vim.g.loaded_netrwPlugin = 1
 -- Enable 24-bit colour
 vim.opt.termguicolors = true
 
--- Setup with some options
 require("nvim-tree").setup({
 	sort = {
 		sorter = "case_sensitive",
@@ -18,9 +17,11 @@ require("nvim-tree").setup({
 			glyphs = {
 				git = {
 					untracked = "?",
-				}}}
+				},
 			},
-			filters = {
-				dotfiles = true,
-			},
-		})
+		},
+	},
+	filters = {
+		dotfiles = true,
+	},
+})
