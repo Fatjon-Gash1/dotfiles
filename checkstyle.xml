@@ -1,0 +1,69 @@
+<!DOCTYPE module PUBLIC
+    "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+    <property name="severity" value="warning"/>
+
+    <module name="FileLength"/>
+    <module name="LineLength"/>
+    <!-- <module name="JavadocPackage"/> -->
+    <module name="TreeWalker">
+        <property name="severity" value="warning"/>
+
+        <!-- Imports -->
+        <module name="AvoidStarImport"/>
+        <module name="UnusedImports"/>
+        
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/>
+            <property name="tabWidth" value="4"/>
+            <property name="caseIndent" value="4"/>
+        </module>
+
+        <!-- Coding standards -->
+        <module name="NeedBraces"/>
+        <module name="NoWhitespaceAfter"/>
+        <module name="NoWhitespaceBefore"/>
+        <module name="OperatorWrap"/>
+        <module name="WhitespaceAround"/>
+        <module name="EmptyBlock"/>
+        <module name="AvoidNestedBlocks"/>
+        <module name="EmptyCatchBlock"/>
+        <module name="MethodLength">
+            <property name="countEmpty" value="false"/>
+            <property name="tokens" value="METHOD_DEF"/>
+            <property name="max" value="20"/>
+            <property name="severity" value="warning"/>
+        </module>
+
+        <!-- Naming conventions -->
+        <module name="AbbreviationAsWordInName">
+            <property name="allowedAbbreviationLength" value="2"/>
+            <property name="ignoreFinal" value="true"/>
+        </module>
+        <module name="TypeName"/>
+        <module name="ConstantName"/>
+        <module name="LocalVariableName"/>
+        <module name="MethodName"/>
+        <module name="ParameterName"/>
+
+        <!-- Javadoc comments -->
+        <module name="JavadocMethod">
+            <property name="tokens" value="METHOD_DEF, ANNOTATION_FIELD_DEF"/>
+        </module>
+        <module name="MissingJavadocMethod"/>
+        <module name="MissingJavadocPackage"/>
+        <module name="MissingJavadocType"/>
+        <module name="JavadocType"/>
+        <module name="JavadocVariable"/>
+        <module name="JavadocStyle"/>
+
+        <!-- Class design -->
+        <module name="HideUtilityClassConstructor"/>
+        <module name="VisibilityModifier"/>
+        <module name="OneTopLevelClass"/>
+        <module name="InnerTypeLast"/>
+        <module name="PackageName"/>
+    </module>
+</module>
