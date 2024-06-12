@@ -1,4 +1,5 @@
 require('sets')
 require('keymaps')
+require('mini')
 require('plugins')
 require('pluginsConf')
