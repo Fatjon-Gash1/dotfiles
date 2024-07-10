@@ -1,14 +1,16 @@
-@import "~/.cache/wal/colors-rofi-dark"
+configuration {
+    font: "Source Code Pro 12";
+}
 
 * {
-	background-color: rgba(0, 0, 0, 0);
+	background-color: #1B1B1B;
 }
 
 window {
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: #1B1B1B;
  	padding: 1ch;
 	width: 35%;
-	height: 15%;
+	height: 10%;
   border: 1px solid;
   border-color: white;
   border-radius: 10px;
@@ -39,6 +41,7 @@ element {
 
 element.normal.normal {
 	background-color: rgba(0, 0, 0, 0);
+    color: white;
 }
 
 element.selected.normal {
@@ -49,8 +52,10 @@ element.selected.normal {
 
 element.alternate.normal {
   background-color: rgba(0, 0, 0, 0);
+  color: white;
 }
 
 entry {
 placeholder: "";
+color: white;
 }
