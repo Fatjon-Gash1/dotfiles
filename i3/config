@@ -4,7 +4,6 @@ set $fmanager alacritty -e ranger
 set $menu rofi -show drun -display-drun ""
 set $lock i3lock -e -f -c 000000
 set $randomWall feh --bg-max -z ~/Pictures/Wallpapers/*
-set $changeWall nitrogen ~/Pictures/Wallpapers/
 set $keysound ~/dotfiles/scripts/keySounds.sh
 
 font pango:Source Code Pro 10
@@ -26,7 +25,6 @@ bindsym Ctrl+o exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym Ctrl+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym Mod1+e exec --no-startup-id $fmanager
 bindsym --release $mod+Shift+p exec xcolor -s
-bindsym $mod+Shift+w exec $changeWall
 bindsym $mod+Shift+z exec $lock
 bindsym F6 exec --no-startup-id brightnessctl set 10+%
 bindsym F5 exec --no-startup-id brightnessctl set 10-%
