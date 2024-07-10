@@ -5,6 +5,7 @@ set $menu rofi -show drun -display-drun ""
 set $lock i3lock -e -f -c 000000
 set $randomWall feh --bg-max -z ~/Pictures/Wallpapers/*
 set $changeWall nitrogen ~/Pictures/Wallpapers/
+set $keysound ~/dotfiles/scripts/keySounds.sh
 
 font pango:Source Code Pro 10
 
@@ -31,6 +32,7 @@ bindsym F6 exec --no-startup-id brightnessctl set 10+%
 bindsym F5 exec --no-startup-id brightnessctl set 10-%
 bindsym $mod+Return exec $terminal
 bindsym Mod1+space exec $menu
+bindsym Mod1+Shift+t exec $keysound
 
 # sticky mode
 bindsym Ctrl+s sticky toggle
