@@ -31,9 +31,9 @@ bindsym --release $mod+Shift+p exec xcolor -s
 bindsym $mod+Shift+z exec $lock
 bindsym F6 exec --no-startup-id brightnessctl set 10+%
 bindsym F5 exec --no-startup-id brightnessctl set 10-%
-bindsym $mod+Return exec $terminal
-bindsym Mod1+space exec $menu
-bindsym Mod1+Shift+t exec $keysound
+bindsym $mod+Return exec --no-startup-id $terminal
+bindsym Mod1+space exec --no-startup-id $menu
+bindsym Mod1+Shift+t exec --no-startup-id $keysound
 
 # sticky mode
 bindsym Ctrl+s sticky toggle
