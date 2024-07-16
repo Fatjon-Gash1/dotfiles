@@ -26,7 +26,7 @@ default_floating_border pixel 1
 bindsym Ctrl+i exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym Ctrl+o exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym Ctrl+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym Mod1+e exec --no-startup-id $fmanager
+bindsym Mod1+Shift+e exec --no-startup-id $fmanager
 bindsym --release $mod+Shift+p exec xcolor -s
 bindsym $mod+Shift+z exec $lock
 bindsym F6 exec --no-startup-id brightnessctl set 10+%
