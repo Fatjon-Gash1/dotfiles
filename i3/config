@@ -21,6 +21,7 @@ exec_always --no-startup-id sh -c "killall -q polybar; polybar"
 floating_modifier $mod
 tiling_drag modifier titlebar
 default_border pixel 1
+client.focused #ffffff #ffffff #ffffff #ffffff
 default_floating_border pixel 1
 
 bindsym Ctrl+i exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
