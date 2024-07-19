@@ -12,3 +12,4 @@ ln -s ~/dotfiles/scripts/ ~/.config
 ln -s ~/dotfiles/code-flags.conf ~/.config
 ln -s ~/dotfiles/spotify-flags.conf ~/.config
 ln -s ~/dotfiles/starship.toml ~/.config
+ln -s ~/dotfiles/.tmux.conf ~/
