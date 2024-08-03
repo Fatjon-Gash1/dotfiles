@@ -14,9 +14,6 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id picom
 exec_always --no-startup-id $randomWall
 exec_always --no-startup-id sh -c "killall -q polybar; polybar"
-exec_always --no-startup-id xset s off
-exec_always --no-startup-id xset s noblank
-exec_always --no-startup-id xset -dpms
 exec --no-startup-id $keysound
 
 floating_modifier $mod
