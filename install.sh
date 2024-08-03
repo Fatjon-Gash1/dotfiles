@@ -13,3 +13,4 @@ ln -s ~/dotfiles/code-flags.conf ~/.config
 ln -s ~/dotfiles/spotify-flags.conf ~/.config
 ln -s ~/dotfiles/starship.toml ~/.config
 ln -s ~/dotfiles/.tmux.conf ~/
+ln -s ~/dotfiles/.xinitrc ~/
