@@ -18,3 +18,20 @@ vim.opt.backup = false
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "auto"
+
+local function save_with_delay()
+	vim.defer_fn(function()
+		if vim.bo.buftype == "" then
+			vim.cmd("write")
+			local time = os.date("*t")
+			print(string.format("File saved at: %02d:%02d:%02d", time.hour, time.min, time.sec))
+		else
+			print(vim.bo.buftype)
+		end
+	end, 1000)
+end
+
+vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+	buffer = 0,
+	callback = save_with_delay,
+})
