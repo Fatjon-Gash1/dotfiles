@@ -32,6 +32,5 @@ local function save_with_delay()
 end
 
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
-	buffer = 0,
 	callback = save_with_delay,
 })
