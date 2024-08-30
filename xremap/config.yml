@@ -1,0 +1,7 @@
+keymap:
+    - name: Vim binding
+      remap:
+          m-h: left
+          m-l: right
+          m-k: up
+          m-j: down
