@@ -2,4 +2,4 @@
 
 cd ~/Documents/bucklespring
 
-./buckle -f
+./buckle -f -M
