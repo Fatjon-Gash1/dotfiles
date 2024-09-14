@@ -8,6 +8,7 @@ ln -s ~/dotfiles/fish/ ~/.config
 ln -s ~/dotfiles/nvim/ ~/.config
 ln -s ~/dotfiles/rofi/ ~/.config
 ln -s ~/dotfiles/scripts/ ~/.config
+ln -s ~/dotfiles/feh/ ~/.config
 
 ln -s ~/dotfiles/code-flags.conf ~/.config
 ln -s ~/dotfiles/spotify-flags.conf ~/.config
