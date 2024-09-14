@@ -1,0 +1,9 @@
+next_img
+prev_img
+zoom_in
+zoom_out
+
+next_img l
+prev_img h
+zoom_in k
+zoom_out j
