@@ -28,3 +28,24 @@ require("lint.linters.checkstyle").args = {
 	"xml",
 	"$FILENAME",
 }
+
+-- Configure diagnostics display settings
+vim.diagnostic.config({
+	virtual_text = {
+		format = function(diagnostic)
+			local message = diagnostic.message
+			local max_width = 80
+			if #message > max_width then
+				return string.sub(message, 1, max_width) .. "..."
+			else
+				return message
+			end
+		end,
+	},
+	float = {
+		source = "always", -- Always show linter source (e.g., ESLint)
+		border = "rounded", -- Use rounded border for floating window
+	},
+	underline = true, -- Underline lines with errors/warnings
+	severity_sort = true, -- Sort diagnostics by severity (Errors > Warnings)
+})
