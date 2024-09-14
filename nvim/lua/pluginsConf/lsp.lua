@@ -8,7 +8,7 @@ require("mason-lspconfig").setup({
 		"html",
 		"svelte",
 		"tailwindcss",
-		"tsserver",
+		"ts_ls",
 		"cssls",
 	},
 })
@@ -78,7 +78,7 @@ require("lspconfig").tailwindcss.setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig").tsserver.setup({
+require("lspconfig").ts_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })

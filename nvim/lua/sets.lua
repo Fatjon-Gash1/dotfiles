@@ -19,6 +19,7 @@ vim.opt.termguicolors = true
 vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "auto"
 
+-- Local functions
 local function save_with_delay()
 	vim.defer_fn(function()
 		if vim.bo.buftype == "" then
@@ -34,3 +35,11 @@ end
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 	callback = save_with_delay,
 })
+
+local original_notify = vim.notify
+
+vim.notify = function(msg, ...)
+	if not (msg:match("completion request failed") or msg:match("Formatter failed")) then
+		original_notify(msg, ...)
+	end
+end
