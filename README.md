@@ -1,6 +1,6 @@
 # My Arch Linux ~/Dotfiles
 
-Explore my dotfiles and add what you like into your own X11 Arch setup. If you have any questions, comments or suggestions, feel free to open an issue or PR!
+Explore my dotfiles and add what you like into your own X11 Arch setup.
 
 Enjoy this configuration! 🙂 🚀
 
