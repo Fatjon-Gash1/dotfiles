@@ -1,6 +1,6 @@
 # My Arch Linux ~/Dotfiles
 
-Explore my dotfiles and add what you like into your own X11 Arch setup. If you have any questions, comments or suggestions, feel free to open an issue or PR!
+Explore my dotfiles and add what you like into your own X11 Arch setup.
 
 Enjoy this configuration! 🙂 🚀
 
@@ -18,10 +18,10 @@ Enjoy this configuration! 🙂 🚀
 -   rofi - Application launcher and dmenu replacement.
 -   ranger - Terminal file manager.
 
-These are some of the tools that I use and have customized for my productivity workflow.
+These are some of the tools that I use and have customized for my development workflow.
 
 > [!CAUTION]
-> Some of the configured files may have additional settings and require external dependencies.  
+> Some of the configured files require external dependencies.  
 > Make sure to carefully review the files you want to use.
 
 ## Usage:
