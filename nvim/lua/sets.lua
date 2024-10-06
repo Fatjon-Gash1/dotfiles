@@ -20,21 +20,34 @@ vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "auto"
 
 -- Local functions
+local auto_save_enabled = true
+
 local function save_with_delay()
-	vim.defer_fn(function()
-		if vim.bo.buftype == "" then
-			vim.cmd("write")
-			local time = os.date("*t")
-			print(string.format("File saved at: %02d:%02d:%02d", time.hour, time.min, time.sec))
-		else
-			print(vim.bo.buftype)
-		end
-	end, 1000)
+	if auto_save_enabled then
+		vim.defer_fn(function()
+			if vim.bo.buftype == "" then
+				vim.cmd("write")
+				local time = os.date("*t")
+				print(string.format("File saved at: %02d:%02d:%02d", time.hour, time.min, time.sec))
+			else
+				print(vim.bo.buftype)
+			end
+		end, 1000)
+	end
 end
 
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 	callback = save_with_delay,
 })
+
+vim.api.nvim_create_user_command("SaveToggle", function()
+	auto_save_enabled = not auto_save_enabled
+	if auto_save_enabled then
+		print("Auto-save enabled")
+	else
+		print("Auto-save disabled")
+	end
+end, {})
 
 local original_notify = vim.notify
 
