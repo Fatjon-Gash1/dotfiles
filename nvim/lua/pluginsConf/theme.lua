@@ -21,7 +21,7 @@ local theme3 = "minimal"
 local currentTheme = theme1
 vim.cmd.colorscheme(currentTheme)
 
-local function st()
+local function chTheme()
 	if currentTheme == theme1 then
 		currentTheme = theme2
 	elseif currentTheme == theme2 then
@@ -32,4 +32,5 @@ local function st()
 	vim.cmd.colorscheme(currentTheme)
 end
 
-_G.st = st
+_G.chTheme = chTheme
+-- Invoke with :lua chTheme()
