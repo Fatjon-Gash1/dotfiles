@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 	callback = save_with_delay,
 })
 
-vim.api.nvim_create_user_command("SaveToggle", function()
+vim.api.nvim_create_user_command("AsToggle", function()
 	auto_save_enabled = not auto_save_enabled
 	if auto_save_enabled then
 		print("Auto-save enabled")
