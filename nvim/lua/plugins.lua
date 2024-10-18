@@ -23,7 +23,7 @@ return require("packer").startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("norcalli/nvim-colorizer.lua")
 
-	-- linter & formatter
+	-- linters & formatters
 	use("mfussenegger/nvim-lint")
 	use("stevearc/conform.nvim")
 
@@ -40,12 +40,13 @@ return require("packer").startup(function(use)
 	use("rebelot/kanagawa.nvim")
 	use("folke/tokyonight.nvim")
 
-	-- LSP
+	-- Lsps
 	use({
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"neovim/nvim-lspconfig",
+		"jose-elias-alvarez/null-ls.nvim",
 	})
 
 	use({
