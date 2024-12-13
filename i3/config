@@ -4,17 +4,16 @@ set $fmanager alacritty -e ranger
 set $menu rofi -show drun -display-drun ""
 set $lock i3lock -e -f -c 000000
 set $randomWall feh --bg-max -z ~/Pictures/Wallpapers/*
-set $keysound ~/dotfiles/scripts/keySounds.sh
 
 font pango:Source Code Pro 10
 
 exec --no-startup-id dex --autostart --envirnment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec_always --no-startup-id xremap ~/dotfiles/xremap/config.yml
 exec_always --no-startup-id picom
 exec_always --no-startup-id $randomWall
 exec_always --no-startup-id sh -c "killall -q polybar; polybar"
-exec --no-startup-id $keysound
 
 floating_modifier $mod
 tiling_drag modifier titlebar
@@ -22,52 +21,38 @@ default_border pixel 1
 client.focused #ffffff #ffffff #ffffff #ffffff
 default_floating_border pixel 1
 
-bindsym Ctrl+i exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym Ctrl+o exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym Ctrl+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym Ctrl+i exec --no-startup-id pamixer -i 10
+bindsym Ctrl+o exec --no-startup-id pamixer -d 10
+bindsym Ctrl+m exec --no-startup-id pamixer -t
 bindsym Mod1+Shift+e exec --no-startup-id $fmanager
 bindsym --release $mod+Shift+p exec xcolor -s
 bindsym $mod+Shift+z exec $lock
-bindsym F6 exec --no-startup-id brightnessctl set 10+%
-bindsym F5 exec --no-startup-id brightnessctl set 10-%
-bindsym $mod+Return exec --no-startup-id $terminal
+bindsym Mod1+Return exec --no-startup-id $terminal
 bindsym Mod1+space exec --no-startup-id $menu
 
 # sticky mode
 bindsym Ctrl+s sticky toggle
 
 # kill focused window
-bindsym $mod+q kill
+bindsym Mod1+q kill
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym Mod1+m split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym Mod1+n split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -98,28 +83,28 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym Mod1+1 workspace number $ws1
+bindsym Mod1+2 workspace number $ws2
+bindsym Mod1+3 workspace number $ws3
+bindsym Mod1+4 workspace number $ws4
+bindsym Mod1+5 workspace number $ws5
+bindsym Mod1+6 workspace number $ws6
+bindsym Mod1+7 workspace number $ws7
+bindsym Mod1+8 workspace number $ws8
+bindsym Mod1+9 workspace number $ws9
+bindsym Mod1+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym Mod1+Shift+1 move container to workspace number $ws1
+bindsym Mod1+Shift+2 move container to workspace number $ws2
+bindsym Mod1+Shift+3 move container to workspace number $ws3
+bindsym Mod1+Shift+4 move container to workspace number $ws4
+bindsym Mod1+Shift+5 move container to workspace number $ws5
+bindsym Mod1+Shift+6 move container to workspace number $ws6
+bindsym Mod1+Shift+7 move container to workspace number $ws7
+bindsym Mod1+Shift+8 move container to workspace number $ws8
+bindsym Mod1+Shift+9 move container to workspace number $ws9
+bindsym Mod1+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -129,15 +114,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
