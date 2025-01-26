@@ -12,6 +12,7 @@ require("conform").setup({
 		markdown = { "prettier" },
 		graphql = { "prettier" },
 		lua = { "stylua" },
+		handlebars = { "djlint" },
 	},
 	format_on_save = {
 		async = false,
