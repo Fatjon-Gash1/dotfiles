@@ -4,7 +4,6 @@ size = 10
 family = "SauceCodePro Nerd Font"
 
 [window]
-opacity = 0.8
 dynamic_padding = true
 
 [window.padding]
