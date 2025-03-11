@@ -7,7 +7,7 @@ SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/home/fatjon/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/home/fatjon/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/home/fatjon\x24
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
 SETUVAR _fisher_jethrokuan_2F_z_files:\x7e/\x2econfig/fish/functions/__z\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_add\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_clean\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_complete\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/z\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejethrokuan/z
