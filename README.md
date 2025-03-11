@@ -1,11 +1,3 @@
-# My Arch Linux ~/Dotfiles
-
-Explore my dotfiles and add what you like into your own X11 Arch setup.
-
-Enjoy this configuration! 🙂 🚀
-
-![Workflow](/images/showcase.png)
-
 ## Configs are for:
 
 -   i3 - Tiling window manager.
