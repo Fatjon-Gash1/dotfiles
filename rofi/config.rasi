@@ -1,5 +1,5 @@
 configuration {
-    font: "Source Code Pro 14";
+    font: "Source Code Pro 12";
 }
 
 * {
@@ -10,7 +10,7 @@ window {
 	background-color: #1B1B1B;
  	padding: 1ch;
 	width: 35%;
-	height: 11%;
+	height: 10%;
   border: 1px solid;
   border-color: white;
   border-radius: 10px;
