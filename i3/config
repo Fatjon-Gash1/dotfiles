@@ -3,7 +3,6 @@ set $terminal alacritty
 set $fmanager alacritty -e ranger
 set $menu rofi -show drun -display-drun ""
 set $lock i3lock -e -f -c 000000
-set $randomWall feh --bg-max -z ~/Pictures/Wallpapers/*
 
 font pango:Source Code Pro 10
 
@@ -12,7 +11,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec_always --no-startup-id xremap ~/dotfiles/xremap/config.yml
 exec_always --no-startup-id picom
-exec_always --no-startup-id $randomWall
 exec_always --no-startup-id sh -c "killall -q polybar; polybar"
 
 floating_modifier $mod
