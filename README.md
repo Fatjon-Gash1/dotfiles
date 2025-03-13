@@ -9,6 +9,7 @@
     Parsers, Auto-Complete, and a bunch of plugins).
 -   rofi - Application launcher and dmenu replacement.
 -   ranger - Terminal file manager.
+-   tmux - Terminal multiplexer.
 
 These are some of the tools that I use and have customized for my development workflow.
 
