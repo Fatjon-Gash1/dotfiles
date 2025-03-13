@@ -4,7 +4,7 @@
 -   picom - Xorg display compositor.
 -   Polybar - Highly customizable status bar.
 -   alacritty - fast GPU-accelerated terminal.
--   fish (shell) + oh-my-fish + starship (customizable prompt).
+-   fish (shell) + fisher + starship (customizable prompt).
 -   Neovim - Vim fork (Fully configured with LSPs, Linters,
     Parsers, Auto-Complete, and a bunch of plugins).
 -   rofi - Application launcher and dmenu replacement.
