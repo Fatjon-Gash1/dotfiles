@@ -46,15 +46,6 @@ end
 
 null_ls.setup({
 	on_attach = on_attach,
-	sources = {
-		null_ls.builtins.diagnostics.cspell.with({
-			diagnostics_postprocess = function(diagnostic)
-				diagnostic.severity = vim.diagnostic.severity.WARN
-			end,
-			filetypes = { "markdown", "text", "javascript", "typescript", "html", "css" },
-		}),
-		null_ls.builtins.code_actions.cspell,
-	},
 })
 
 require("lspconfig").lua_ls.setup({
