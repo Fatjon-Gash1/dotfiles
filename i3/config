@@ -23,7 +23,7 @@ bindsym Ctrl+i exec --no-startup-id pamixer -i 10
 bindsym Ctrl+o exec --no-startup-id pamixer -d 10
 bindsym Ctrl+m exec --no-startup-id pamixer -t
 bindsym Mod1+Shift+e exec --no-startup-id $fmanager
-bindsym --release $mod+Shift+p exec xcolor -s
+bindsym --release $mod+Shift+p exec xcolor | tr -d '\n' | xclip -selection clipboard
 bindsym $mod+Shift+z exec $lock
 bindsym F6 exec --no-startup-id brightnessctl set 10+%
 bindsym F5 exec --no-startup-id brightnessctl set 10-%
