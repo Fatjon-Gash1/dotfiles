@@ -14,9 +14,4 @@ require("conform").setup({
 		lua = { "stylua" },
 		handlebars = { "djlint" },
 	},
-	format_on_save = {
-		async = false,
-		timeout_ms = 500,
-		lsp_fallback = true,
-	},
 })
