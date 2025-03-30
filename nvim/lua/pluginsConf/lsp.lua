@@ -22,6 +22,7 @@ require("mason-tool-installer").setup({
 		"checkstyle",
 		"stylua",
 		"prettier",
+		"jsonlint",
 	},
 })
 
