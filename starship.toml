@@ -9,9 +9,9 @@ $golang\
 $java\
 $php\
 $python\
-[:](fg:#ffffff)\ 
+(fg:#ffffff)\ 
 $time\
-$character"""
+"""
 
 [directory]
 style = "fg:#15bfe6"
@@ -73,4 +73,4 @@ format = '[[ $symbol ($version) ](fg:#ffea00)]($style)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "fg:#ededed"
-format = '[[  $time ](fg:#ededed)]($style)'
+format = '[[$time ](fg:#ededed)]($style)'
