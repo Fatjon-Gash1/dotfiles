@@ -22,10 +22,16 @@ return require("packer").startup(function(use)
 	use("tpope/vim-fugitive")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("norcalli/nvim-colorizer.lua")
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.8",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
 
 	-- linters & formatters
 	use("mfussenegger/nvim-lint")
 	use("stevearc/conform.nvim")
+	use("dense-analysis/ale")
 
 	-- Completion
 	use("hrsh7th/nvim-cmp")
@@ -46,13 +52,8 @@ return require("packer").startup(function(use)
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"neovim/nvim-lspconfig",
-		"jose-elias-alvarez/null-ls.nvim",
-	})
-
-	use({
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.6",
-		requires = { { "nvim-lua/plenary.nvim" } },
+		"nvimtools/none-ls.nvim",
+		"nvimtools/none-ls-extras.nvim",
 	})
 
 	if packer_bootstrap then
