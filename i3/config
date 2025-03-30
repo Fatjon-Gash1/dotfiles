@@ -23,7 +23,7 @@ bindsym Ctrl+i exec --no-startup-id pamixer -i 10
 bindsym Ctrl+o exec --no-startup-id pamixer -d 10
 bindsym Ctrl+m exec --no-startup-id pamixer -t
 bindsym Mod1+Shift+e exec --no-startup-id $fmanager
-bindsym --release $mod+Shift+p exec xcolor -s
+bindsym --release $mod+Shift+p exec xcolor | tr -d '\n' | xclip -selection clipboard
 bindsym $mod+Shift+z exec $lock
 bindsym Mod1+Return exec --no-startup-id $terminal
 bindsym Mod1+space exec --no-startup-id $menu
