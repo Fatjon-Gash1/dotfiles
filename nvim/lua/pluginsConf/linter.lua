@@ -24,6 +24,7 @@ lint.linters_by_ft = {
 	python = { "pylint" },
 	java = { "checkstyle" },
 	handlebars = { "djlint" },
+	json = { "jsonlint" },
 }
 
 local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
