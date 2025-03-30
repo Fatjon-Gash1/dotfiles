@@ -25,7 +25,7 @@ local auto_save_enabled = true
 local function save_with_delay()
 	if auto_save_enabled then
 		vim.defer_fn(function()
-			if vim.bo.buftype == "" then
+			if vim.bo.buftype == "" and vim.bo.modified then
 				vim.cmd("write")
 				local time = os.date("*t")
 				print(string.format("File saved at: %02d:%02d:%02d", time.hour, time.min, time.sec))
