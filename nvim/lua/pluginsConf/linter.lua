@@ -1,3 +1,17 @@
+vim.g.ale_linters = {
+	markdown = { "cspell" },
+	typescript = { "cspell" },
+	javascript = { "cspell" },
+	typescriptreact = { "cspell" },
+	javascriptreact = { "cspell" },
+	svelte = { "cspell" },
+	css = { "cspell" },
+	python = { "cspell" },
+	java = { "cspell" },
+	handlebars = { "cspell" },
+}
+vim.g.ale_linters_explicit = 1
+
 local lint = require("lint")
 lint.linters_by_ft = {
 	markdown = { "vale" },
