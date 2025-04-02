@@ -52,7 +52,7 @@ end, {})
 local original_notify = vim.notify
 
 vim.notify = function(msg, ...)
-	if not (msg:match("completion request failed") or msg:match("Formatter failed")) then
+	if not (msg:match("completion request failed") --[[or msg:match("Formatter failed")]]) then
 		original_notify(msg, ...)
 	end
 end
