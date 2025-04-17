@@ -1,8 +1,8 @@
 -- theme config
 require("tokyonight").setup({
-	style = "storm", -- `storm`, `moon`,`night` and `day`
+	style = "night", -- `storm`, `moon`,`night` and `day`
 	light_style = "day", -- The theme is used when the background is set to light
-	transparent = true,
+	transparent = false,
 	styles = {
 		comments = { italic = false },
 		keywords = { italic = false },
