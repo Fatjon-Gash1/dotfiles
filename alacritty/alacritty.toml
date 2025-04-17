@@ -5,3 +5,6 @@ family = "SauceCodePro Nerd Font"
 
 [window]
 dynamic_padding = true
+
+[colors.primary]
+background = "#1a1b26"
