@@ -5,7 +5,3 @@ family = "SauceCodePro Nerd Font"
 
 [window]
 dynamic_padding = true
-
-[window.padding]
-y = 5
-
