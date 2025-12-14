@@ -18,7 +18,7 @@ require("mason-tool-installer").setup({
 		"vale",
 		"eslint_d",
 		"stylelint",
-		"pylint",
+		--"pylint",
 		"checkstyle",
 		"stylua",
 		"prettier",
