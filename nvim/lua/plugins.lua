@@ -20,11 +20,11 @@ return require("packer").startup(function(use)
 	use("nvim-treesitter/nvim-treesitter")
 	use("ThePrimeagen/harpoon")
 	use("tpope/vim-fugitive")
+    use("lewis6991/gitsigns.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("norcalli/nvim-colorizer.lua")
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
@@ -47,14 +47,12 @@ return require("packer").startup(function(use)
 	use("folke/tokyonight.nvim")
 
 	-- Lsps
-	use({
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		"neovim/nvim-lspconfig",
-		"nvimtools/none-ls.nvim",
-		"nvimtools/none-ls-extras.nvim",
-	})
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
+	use("WhoIsSethDaniel/mason-tool-installer.nvim")
+	use("neovim/nvim-lspconfig")
+	use("nvimtools/none-ls.nvim")
+	use("nvimtools/none-ls-extras.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()
