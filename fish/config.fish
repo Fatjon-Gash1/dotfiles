@@ -8,9 +8,7 @@ alias rd rmdir
 alias t touch
 alias fv 'find . -type f | peco | xargs nvim'
 alias ll 'exa --header --long --extended --group-directories-first --no-user --no-permissions --icons'
-alias rbackup 'sudo rsync -avh --progress --exclude={"/data/*","/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} --delete / /data/backup/'
 alias v nvim
-alias s startx
 alias gs 'git status'
 alias ga 'git add'
 alias gc 'git commit -m'
@@ -21,5 +19,5 @@ alias gr 'git rm'
 
 starship init fish | source
 
-# Created by `pipx` on 2025-02-11 21:59:50
-set PATH $PATH /home/fatjon/.local/bin
+# Created by `pipx` on 2025-12-14 14:21:49
+set PATH $PATH /Users/fatjongashi/.local/bin
