@@ -23,6 +23,8 @@ lint.linters_by_ft = {
 	css = { "stylelint" },
 	-- python = { "pylint" },
 	java = { "checkstyle" },
+	php = { "phpcs" },
+	twig = { "djlint" },
 	handlebars = { "djlint" },
 	json = { "jsonlint" },
 }
