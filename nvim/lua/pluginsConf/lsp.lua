@@ -11,6 +11,7 @@ require("mason-lspconfig").setup({
 		"ts_ls",
 		"cssls",
 	},
+    automatic_enable = { "intelephense" }
 })
 
 require("mason-tool-installer").setup({
@@ -39,57 +40,58 @@ local on_attach = function(_, _)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 end
 
--- Only for lsps that don't detect root
-local dirFind = function()
-	return vim.loop.cwd()
-end
-
 null_ls.setup({
 	on_attach = on_attach,
 })
 
-require("lspconfig").lua_ls.setup({
+vim.lsp.config("lua_ls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
-require("lspconfig").intelephense.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	root_dir = dirFind,
-})
-
-require("lspconfig").jdtls.setup({
+vim.lsp.config("jdtls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
-require("lspconfig").pylsp.setup({
+vim.lsp.config("pylsp", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
-require("lspconfig").html.setup({
+vim.lsp.config("html", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
-require("lspconfig").svelte.setup({
+vim.lsp.config("svelte", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
-require("lspconfig").tailwindcss.setup({
+vim.lsp.config("tailwindcss", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
-require("lspconfig").ts_ls.setup({
+vim.lsp.config("ts_ls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
-require("lspconfig").cssls.setup({
+vim.lsp.config("css_ls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+vim.lsp.enable({
+    "lua_ls",
+    "jdtls",
+    "pylsp",
+    "html",
+    "svelte",
+    "tailwindcss",
+    "ts_ls",
+    "css_ls",
+})
+
