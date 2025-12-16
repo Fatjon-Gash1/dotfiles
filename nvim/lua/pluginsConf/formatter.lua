@@ -13,17 +13,17 @@ require("conform").setup({
 		graphql = { "prettier" },
 		lua = { "stylua" },
 		handlebars = { "djlint" },
-        php = { "php-cs-fixer" },
+		php = { "php-cs-fixer" },
 	},
-    formatters = {
-      ["php-cs-fixer"] = {
-        command = "php-cs-fixer",
-        args = {
-          "fix",
-          "--config=/Users/fatjongashi/.php-cs-fixer.php",
-          "$FILENAME",
-        },
-        stdin = false,
-      },
-    },
+	formatters = {
+		["php-cs-fixer"] = {
+			command = "php-cs-fixer",
+			args = {
+				"fix",
+				"--config=/Users/fatjongashi/.php-cs-fixer.php",
+				"$FILENAME",
+			},
+			stdin = false,
+		},
+	},
 })
