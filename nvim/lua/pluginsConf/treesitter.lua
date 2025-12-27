@@ -1,5 +1,20 @@
-require("nvim-treesitter").setup({
-	ensure_installed = {
+require("nvim-treesitter").Install({
+	"c",
+	"lua",
+	"vim",
+	"vimdoc",
+	"query",
+	"javascript",
+	"typescript",
+	"php",
+	"java",
+	"python",
+	"html",
+	"css",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = {
 		"c",
 		"lua",
 		"vim",
@@ -13,11 +28,7 @@ require("nvim-treesitter").setup({
 		"html",
 		"css",
 	},
-
-	-- Install parsers synchronously (only applied to `ensure_installed`)
-	sync_install = false,
-	auto_install = true,
-	highlight = {
-		enable = true,
-	},
+	callback = function()
+		vim.treesitter.start()
+	end,
 })
