@@ -1,4 +1,4 @@
-require("nvim-treesitter").Install({
+require'nvim-treesitter'.install {
 	"c",
 	"lua",
 	"vim",
@@ -11,7 +11,7 @@ require("nvim-treesitter").Install({
 	"python",
 	"html",
 	"css",
-})
+}
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
@@ -30,5 +30,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	},
 	callback = function()
 		vim.treesitter.start()
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 	end,
 })
