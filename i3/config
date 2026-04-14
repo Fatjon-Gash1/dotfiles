@@ -9,7 +9,6 @@ font pango:Source Code Pro 10
 exec --no-startup-id dex --autostart --envirnment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-exec_always --no-startup-id xremap ~/dotfiles/xremap/config.yml
 exec_always --no-startup-id picom
 exec_always --no-startup-id sh -c "killall -q polybar; polybar"
 
@@ -19,9 +18,17 @@ default_border pixel 1
 client.focused #ffffff #ffffff #ffffff #ffffff
 default_floating_border pixel 1
 
-bindsym Ctrl+i exec --no-startup-id pamixer -i 10
-bindsym Ctrl+o exec --no-startup-id pamixer -d 10
-bindsym Ctrl+m exec --no-startup-id pamixer -t
+set $mute exec --no-startup-id pamixer -t
+set $vol_up exec --no-startup-id pamixer -i 10
+set $vol_down exec --no-startup-id pamixer -d 10
+
+bindsym Ctrl+i $vol_up
+bindsym Ctrl+o $vol_down
+bindsym Ctrl+m $mute
+bindsym XF86AudioRaiseVolume $vol_up
+bindsym XF86AudioLowerVolume $vol_down
+bindsym XF86AudioMute $mute
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym Mod1+Shift+e exec --no-startup-id $fmanager
 bindsym --release $mod+Shift+p exec xcolor | tr -d '\n' | xclip -selection clipboard
 bindsym $mod+Shift+z exec $lock
@@ -79,6 +86,13 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+# dual-monitors
+set $main HDMI-0
+set $left DVI-D-0
+
+workspace $ws1 output $left
+workspace $ws2 output $main
 
 # switch to workspace
 bindsym Mod1+1 workspace number $ws1
