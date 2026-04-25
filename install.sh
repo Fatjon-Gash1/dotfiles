@@ -5,3 +5,4 @@ ln -s ~/dotfiles/nvim/ ~/.config
 
 ln -s ~/dotfiles/starship.toml ~/.config
 ln -s ~/dotfiles/.tmux.conf ~/
+ln -s ~/dotfiles/.prettierrc ~/

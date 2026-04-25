@@ -1,3 +1,6 @@
 nvim/plugin/packer_compiled.lua
 fish/fish_variables
 .DS_Store
+fish/conf.d
+.codex
+*.bak
