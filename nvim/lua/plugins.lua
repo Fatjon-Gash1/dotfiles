@@ -60,6 +60,13 @@ return require("packer").startup(function(use)
     use("theHamsta/nvim-dap-virtual-text")
     use("nvim-neotest/nvim-nio")
 
+    -- preview
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+        ft = { "markdown" },
+    })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
