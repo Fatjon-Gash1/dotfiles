@@ -1,32 +1,40 @@
 #!/bin/bash
-ln -s ~/dotfiles/i3/ ~/.config
-ln -s ~/dotfiles/polybar/ ~/.config
-ln -s ~/dotfiles/picom/ ~/.config
-ln -s ~/dotfiles/ranger/ ~/.config
-ln -s ~/dotfiles/alacritty/ ~/.config
-ln -s ~/dotfiles/fish/ ~/.config
-ln -s ~/dotfiles/nvim/ ~/.config
-ln -s ~/dotfiles/rofi/ ~/.config
-ln -s ~/dotfiles/feh/ ~/.config
 
-ln -s ~/dotfiles/code-flags.conf ~/.config
-ln -s ~/dotfiles/starship.toml ~/.config
-ln -s ~/dotfiles/.tmux.conf ~/
-ln -s ~/dotfiles/.xinitrc ~/
-ln -s ~/dotfiles/.prettierrc ~/
-sudo ln -s ~/dotfiles/reflector.conf /etc/xdg/reflector
+lns() {
+  local src=$1 dst=$2
+  [ -L "$dst" ] && rm "$dst"
+  ln -s "$src" "$dst"
+}
+
+lns ~/dotfiles/i3        ~/.config/i3
+lns ~/dotfiles/polybar   ~/.config/polybar
+lns ~/dotfiles/picom     ~/.config/picom
+lns ~/dotfiles/ranger    ~/.config/ranger
+lns ~/dotfiles/alacritty ~/.config/alacritty
+lns ~/dotfiles/fish      ~/.config/fish
+lns ~/dotfiles/nvim      ~/.config/nvim
+lns ~/dotfiles/rofi      ~/.config/rofi
+lns ~/dotfiles/feh       ~/.config/feh
+
+lns ~/dotfiles/code-flags.conf ~/.config/code-flags.conf
+lns ~/dotfiles/starship.toml   ~/.config/starship.toml
+lns ~/dotfiles/.tmux.conf      ~/.tmux.conf
+lns ~/dotfiles/.xinitrc        ~/.xinitrc
+lns ~/dotfiles/.prettierrc     ~/.prettierrc
+
+[ -L /etc/xdg/reflector/reflector.conf ] && sudo rm /etc/xdg/reflector/reflector.conf
+sudo ln -s ~/dotfiles/reflector.conf /etc/xdg/reflector/reflector.conf
 
 # Claude Code: ~/.claude/ (docs: code.claude.com)
 #   agents/         subagents
-#   commands/       custom slash commands (legacy; skills supersede)
-#   skills/         skills (each is a dir with SKILL.md)
+#   skills/         skills invoked with /name (each is a dir with SKILL.md)
+#   rules/          topic-scoped instructions, optionally path-gated
 #   output-styles/  custom output styles
 #   hooks/          hook scripts (referenced from settings.json)
-#   plugins/        plugin marketplace refs
-# MCP servers live in ~/.claude.json (global) — no dir to symlink.
+# plugins/ is app-managed — not symlinked. MCP servers live in ~/.claude.json.
 mkdir -p ~/.claude
-for dir in agents commands skills output-styles hooks plugins; do
-  ln -s ~/dotfiles/.claude/$dir ~/.claude/$dir
+for dir in agents skills rules output-styles hooks; do
+  lns ~/dotfiles/.claude/$dir ~/.claude/$dir
 done
 
 # Codex CLI: ~/.codex/ (docs: developers.openai.com/codex)
@@ -37,9 +45,9 @@ done
 # AGENTS.md (memory) is a file at ~/.codex/AGENTS.md or repo root.
 mkdir -p ~/.codex
 for dir in agents prompts hooks; do
-  ln -s ~/dotfiles/.codex/$dir ~/.codex/$dir
+  lns ~/dotfiles/.codex/$dir ~/.codex/$dir
 done
 
 # Cross-tool skills (Agent Skills standard) consumed by Codex from ~/.agents/skills/
 mkdir -p ~/.agents
-ln -s ~/dotfiles/.agents/skills ~/.agents/skills
+lns ~/dotfiles/.agents/skills ~/.agents/skills

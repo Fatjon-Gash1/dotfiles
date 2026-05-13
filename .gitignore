@@ -1,5 +1,4 @@
 nvim/plugin/packer_compiled.lua
 fish/fish_variables
 fish/conf.d
-.codex
 *.bak
