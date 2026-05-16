@@ -1,11 +1,13 @@
 ---
-name: pr-description
-description: Write a pull request description from the actual diff. Triggers when the user asks to open a PR, draft a PR body, or fill in a PR description. Prefers the repo's own .github/PULL_REQUEST_TEMPLATE.md over the bundled fallback template; never auto-populates the body from commit messages alone.
+name: create-pr
+description: Create a GitHub PR for the already-pushed branch using the gh CLI, with a title and body grounded in the actual diff. Triggers when the user or an agent asks to "create the PR", "open a PR", or "raise a PR" after pushing a branch (e.g. once internal code review passes). Drafts the body from the diff — never from commit messages alone — then creates the PR directly via gh; no manual copy-paste, no approval gate.
 ---
 
-# pr-description
+# create-pr
 
-Produce a PR description grounded in the diff, not in the conversation or the commit messages.
+The branch is already pushed (by the user or by an agent after internal code review passes). This skill's job is to draft a PR title and body from the real diff and create the PR via the `gh` CLI in one shot. The human edits the PR afterward for reviewers, labels, milestones, etc. — that part is intentionally out of scope.
+
+No approval gate: draft, then create. Do not ask for confirmation before `gh pr create`.
 
 ## Procedure
 
@@ -33,32 +35,30 @@ Produce a PR description grounded in the diff, not in the conversation or the co
 
 5. **Do not** populate the PR body purely from `git log` output. Commit bodies feed history; PR bodies feed review. They are not the same artifact.
 
-## End-to-end automation
+## Creating the PR
 
-When the user's intent is to *open or update* a PR (not just draft text), run the full flow in this order. Do not split it across multiple turns unless the user interrupts.
+Run the full flow in one turn. No confirmation step.
 
 1. **Preflight** (parallel):
    - `gh --version` — fail clearly with an install hint (`sudo pacman -S github-cli && gh auth login`) if missing.
-   - `git status --porcelain` — warn if there are uncommitted changes; ask before continuing.
    - `git rev-parse --abbrev-ref HEAD` and `git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null` — current branch + whether it has an upstream.
    - `gh pr view --json number,url,state 2>/dev/null` — does a PR already exist for this branch?
+   - `git status --porcelain` — if there are uncommitted changes, note them in your final message (they won't be in the PR), but do not block.
 
-2. **Build the draft** per the Procedure section above (read full diff, pick template, fill from diff).
+2. **Ensure the branch is on the remote.** The branch is expected to be pushed already. Only as a fallback: if there is no upstream, run `git push -u origin <branch>`. If an upstream exists, do not push — assume the caller already did. Never force-push.
 
-3. **Single approval gate.** Show the user:
-   - The proposed title and body.
-   - Whether this will `git push -u origin <branch>` (new branch) or just push updates.
-   - Whether this will `gh pr create` (no PR yet) or `gh pr edit <n>` (PR exists).
-   - The target base branch.
+3. **Build the draft** per the Procedure section above (read full diff, pick template, fill from diff).
 
-   Wait for explicit confirmation ("looks good", "go", "ship it"). Do not call `git push` or `gh` before this.
+4. **Create or update the PR, immediately:**
+   - No existing PR → `gh pr create --title ... --body "$(cat <<'EOF' ... EOF)" --base <base>`. Use a heredoc for the body to preserve formatting.
+   - PR already exists for the branch → `gh pr edit <n> --title ... --body ...` (refresh title/body from the current diff).
+   - Print the resulting PR URL from `gh`'s output as the final line.
 
-4. **Execute, back-to-back, after approval:**
-   - `git push` (with `-u origin <branch>` if no upstream).
-   - `gh pr create --title ... --body "$(cat <<'EOF' ... EOF)" --base <base>` **or** `gh pr edit <n> --body ...` if a PR already exists. Use a heredoc for the body to preserve formatting.
-   - Print the PR URL from `gh`'s output.
+5. **If anything fails** (push rejected, `gh` auth error, base branch missing, no upstream and push fails) — stop, surface the exact error, do not retry blindly. Do not fall back to printing the body for manual paste unless `gh` itself is unavailable.
 
-5. **If anything fails** (push rejected, `gh` auth error, base branch missing) — stop, surface the error, do not retry blindly.
+## Out of scope
+
+Assigning reviewers, labels, milestones, projects, or marking ready/draft. The human does this on GitHub after the PR exists. Don't add `--reviewer`/`--label`/`--draft` flags unless explicitly asked in the invocation.
 
 ## Anti-patterns to refuse
 
@@ -66,3 +66,4 @@ When the user's intent is to *open or update* a PR (not just draft text), run th
 - Copy-pasting the latest commit message as the PR body.
 - Inventing a "Test plan" with commands that were never run.
 - Dropping sections from a repo-provided template because they feel redundant.
+- Asking for human approval before creating the PR — this skill is explicitly non-gated so agents can call it autonomously after internal review.
