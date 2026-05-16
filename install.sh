@@ -36,6 +36,7 @@ mkdir -p ~/.claude
 for dir in agents skills rules output-styles hooks; do
   lns ~/dotfiles/.claude/$dir ~/.claude/$dir
 done
+lns ~/dotfiles/.claude/settings.json ~/.claude/settings.json
 
 # Codex CLI: ~/.codex/ (docs: developers.openai.com/codex)
 #   agents/   subagent/role TOML files

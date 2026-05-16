@@ -2,3 +2,4 @@ nvim/plugin/packer_compiled.lua
 fish/fish_variables
 fish/conf.d
 *.bak
+.claude/settings.local.json

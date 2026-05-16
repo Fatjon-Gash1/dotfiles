@@ -1,0 +1,40 @@
+{
+  "model": "opus",
+  "effortLevel": "medium",
+  "theme": "dark",
+  "voiceEnabled": false,
+  "voice": {
+    "enabled": false,
+    "mode": "hold"
+  },
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:docs.claude.com)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "$HOME/.claude/hooks/bash-guard.sh" }
+        ]
+      },
+      {
+        "matcher": "Read|Bash",
+        "hooks": [
+          { "type": "command", "command": "$HOME/.claude/hooks/secrets-guard.sh" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          { "type": "command", "command": "$HOME/.claude/hooks/format.sh" }
+        ]
+      }
+    ]
+  }
+}
