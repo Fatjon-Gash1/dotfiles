@@ -13,10 +13,10 @@ Plain config dirs symlinked to `~/.config/<name>`: `i3`, `polybar`, `picom`, `ra
 Agent tooling configs are organized to be shared across CLIs:
 
 - `.claude/` → symlinked piecewise into `~/.claude/` (subdirs: `agents/`, `skills/`, `rules/`, `output-styles/`, `hooks/`). MCP servers and main settings live in `~/.claude.json` and are NOT in this repo. `settings.local.json` is the only checked-in settings file. `plugins/` is app-managed and not tracked.
-- `.codex/` → symlinked piecewise into `~/.codex/` (subdirs: `agents/`, `prompts/`, `hooks/`). Main config (`config.toml`, MCP, hooks wiring, `AGENTS.md`) lives outside this repo. **Note: `.codex` is in `.gitignore`** — the directory exists locally for symlinking but its contents are not tracked.
+- `.codex/` → symlinked piecewise into `~/.codex/` (subdirs: `agents/`, `hooks/`, `rules/`, plus `AGENTS.md` and `hooks.json`). Main config (`config.toml` and MCP) lives outside this repo.
 - `.agents/skills/` → symlinked to `~/.agents/skills/`, the cross-tool Agent Skills location consumed by Codex.
 
-The `agents/`, `skills/`, `rules/`, `hooks/`, `output-styles/` subdirs under `.claude/` and the `agents/`, `prompts/`, `hooks/` subdirs under `.codex/` are currently empty — they exist as stable symlink targets so new agent assets can be dropped in without touching `install.sh`.
+The `.claude/` tree keeps Claude's native structure. The `.codex/` tree keeps Codex-specific equivalents: global instructions in `AGENTS.md`, hook wiring in `hooks.json`, shell scripts under `hooks/`, command rules under `rules/`, and optional custom agents under `agents/`.
 
 ## Install / apply changes
 
@@ -38,6 +38,6 @@ Entrypoint `nvim/init.lua` loads `lua/sets.lua`, `lua/keymaps.lua`, and `lua/plu
 
 ## Conventions worth knowing
 
-- `.gitignore` excludes `nvim/plugin/packer_compiled.lua`, `fish/fish_variables`, `fish/conf.d`, `.codex`, and `*.bak`. Don't try to commit generated/local state in those paths.
+- `.gitignore` excludes `nvim/plugin/packer_compiled.lua`, `fish/fish_variables`, `fish/conf.d`, and `*.bak`. Don't try to commit generated/local state in those paths.
 - `arch_packages_list.txt` is a manual snapshot of installed packages, not auto-generated.
 - `checkstyle.xml` and `.prettierrc` are personal style configs used by editors/projects, unrelated to this repo's own tooling.

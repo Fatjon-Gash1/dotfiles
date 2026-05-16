@@ -1,0 +1,44 @@
+# Codex command rules for repository-wide safety policy.
+# Natural-language policy lives in AGENTS.md; this file only controls commands.
+
+prefix_rule(
+    pattern = ["rm", "-rf", "/"],
+    decision = "forbidden",
+    justification = "Never remove the filesystem root.",
+    match = ["rm -rf /"],
+)
+
+prefix_rule(
+    pattern = ["rm", "-fr", "/"],
+    decision = "forbidden",
+    justification = "Never remove the filesystem root.",
+    match = ["rm -fr /"],
+)
+
+prefix_rule(
+    pattern = ["git", "reset", "--hard"],
+    decision = "forbidden",
+    justification = "Investigate and preserve user work instead of discarding the tree.",
+    match = ["git reset --hard", "git reset --hard HEAD~1"],
+)
+
+prefix_rule(
+    pattern = ["git", "checkout", "--", "."],
+    decision = "forbidden",
+    justification = "Do not discard the working tree as a shortcut.",
+    match = ["git checkout -- ."],
+)
+
+prefix_rule(
+    pattern = ["git", "push", "origin", "main", "--force"],
+    decision = "forbidden",
+    justification = "Never force-push the main branch.",
+    match = ["git push origin main --force"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", "origin", "master", "--force"],
+    decision = "forbidden",
+    justification = "Never force-push the master branch.",
+    match = ["git push origin master --force"],
+)

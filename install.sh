@@ -39,15 +39,16 @@ done
 lns ~/dotfiles/.claude/settings.json ~/.claude/settings.json
 
 # Codex CLI: ~/.codex/ (docs: developers.openai.com/codex)
-#   agents/   subagent/role TOML files
-#   prompts/  custom slash commands (.md)
-#   hooks/    hook scripts (referenced from hooks.json or config.toml [hooks])
-# MCP servers, hooks config, and main settings live in ~/.codex/config.toml.
-# AGENTS.md (memory) is a file at ~/.codex/AGENTS.md or repo root.
+#   agents/  custom agent TOML files
+#   hooks/   hook scripts (referenced from hooks.json or config.toml [hooks])
+#   rules/   command permission rules (*.rules)
+# MCP servers and main settings live in ~/.codex/config.toml.
 mkdir -p ~/.codex
-for dir in agents prompts hooks; do
+for dir in agents hooks rules; do
   lns ~/dotfiles/.codex/$dir ~/.codex/$dir
 done
+lns ~/dotfiles/.codex/AGENTS.md ~/.codex/AGENTS.md
+lns ~/dotfiles/.codex/hooks.json ~/.codex/hooks.json
 
 # Cross-tool skills (Agent Skills standard) consumed by Codex from ~/.agents/skills/
 mkdir -p ~/.agents

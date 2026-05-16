@@ -1,0 +1,38 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.codex/hooks/bash-guard.sh",
+            "statusMessage": "Checking shell command"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.codex/hooks/secrets-guard.sh",
+            "statusMessage": "Checking secret access"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|apply_patch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.codex/hooks/format.sh",
+            "statusMessage": "Formatting changed file"
+          }
+        ]
+      }
+    ]
+  }
+}
