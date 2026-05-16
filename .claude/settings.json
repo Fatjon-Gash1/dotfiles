@@ -1,49 +1,59 @@
 {
-  "permissions": {
-    "allow": [
-      "WebSearch",
-      "WebFetch(domain:docs.claude.com)"
-    ]
-  },
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/hooks/bash-guard.sh"
-          }
+    "permissions": {
+        "allow": [
+            "WebSearch",
+            "WebFetch(domain:docs.claude.com)"
         ]
-      },
-      {
-        "matcher": "Read|Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/hooks/secrets-guard.sh"
-          }
+    },
+    "hooks": {
+        "PreToolUse": [
+            {
+                "matcher": "Bash",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "$HOME/.claude/hooks/bash-guard.sh"
+                    }
+                ]
+            },
+            {
+                "matcher": "Read|Bash",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "$HOME/.claude/hooks/secrets-guard.sh"
+                    }
+                ]
+            }
+        ],
+        "PostToolUse": [
+            {
+                "matcher": "Edit|Write",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "$HOME/.claude/hooks/format.sh"
+                    }
+                ]
+            }
+        ],
+        "Stop": [
+            {
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "tmux display -p '#{pane_tty}' | xargs -I{} sh -c 'printf \"\\a\" > {}'"
+                    }
+                ]
+            }
         ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "Edit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/hooks/format.sh"
-          }
-        ]
-      }
-    ]
-  },
-  "effortLevel": "medium",
-  "voice": {
-    "enabled": false,
-    "mode": "hold"
-  },
-  "theme": "dark",
-  "voiceEnabled": false,
-  "model": "opus"
+    },
+    "effortLevel": "medium",
+    "voice": {
+        "enabled": false,
+        "mode": "hold"
+    },
+    "theme": "dark",
+    "voiceEnabled": false,
+    "model": "opus"
 }
