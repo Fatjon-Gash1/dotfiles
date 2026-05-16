@@ -1,12 +1,4 @@
 {
-  "model": "opus",
-  "effortLevel": "medium",
-  "theme": "dark",
-  "voiceEnabled": false,
-  "voice": {
-    "enabled": false,
-    "mode": "hold"
-  },
   "permissions": {
     "allow": [
       "WebSearch",
@@ -18,13 +10,19 @@
       {
         "matcher": "Bash",
         "hooks": [
-          { "type": "command", "command": "$HOME/.claude/hooks/bash-guard.sh" }
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/bash-guard.sh"
+          }
         ]
       },
       {
         "matcher": "Read|Bash",
         "hooks": [
-          { "type": "command", "command": "$HOME/.claude/hooks/secrets-guard.sh" }
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/secrets-guard.sh"
+          }
         ]
       }
     ],
@@ -32,9 +30,20 @@
       {
         "matcher": "Edit|Write",
         "hooks": [
-          { "type": "command", "command": "$HOME/.claude/hooks/format.sh" }
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/format.sh"
+          }
         ]
       }
     ]
-  }
+  },
+  "effortLevel": "medium",
+  "voice": {
+    "enabled": false,
+    "mode": "hold"
+  },
+  "theme": "dark",
+  "voiceEnabled": false,
+  "model": "opus"
 }
