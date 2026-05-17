@@ -3,12 +3,16 @@
 -   i3 - Tiling window manager.
 -   picom - Xorg display compositor.
 -   Polybar - Highly customizable status bar.
--   alacritty - fast GPU-accelerated terminal.
--   fish (shell) + oh-my-fish + starship (customizable prompt).
--   Neovim - Vim fork (Fully configured with LSPs, Linters,
-    Parsers, Auto-Complete, and a bunch of plugins).
+-   alacritty - Fast GPU-accelerated terminal.
+-   fish (shell) + fisher + starship (customizable prompt).
+-   Neovim - Vim fork (fully configured with LSPs, linters,
+    parsers, auto-complete, and a bunch of plugins).
 -   rofi - Application launcher and dmenu replacement.
 -   ranger - Terminal file manager.
+-   feh - Wallpaper setter.
+-   xremap - Key remapper.
+-   tmux - Terminal multiplexer.
+-   Claude Code (`.claude/`) and Codex CLI (`.codex/`) agent tooling.
 
 These are some of the tools that I use and have customized for my development workflow.
 
@@ -19,9 +23,9 @@ These are some of the tools that I use and have customized for my development wo
 ## Usage:
 
 ```
-$ git clone https://github.com/Fatjon-Gash1/Dotfiles.git ~/.Dotfiles
-$ ~/.Dotfiles/install.sh
+$ git clone https://github.com/Fatjon-Gash1/dotfiles.git ~/dotfiles
+$ ~/dotfiles/install.sh
 ```
 
-> [!WARNING]
-> Before executing the script make sure that you have removed the specific folders from the `~/.config` directory.
+> [!NOTE]
+> The install script is idempotent — safe to re-run. It replaces existing symlinks but will not overwrite real directories or files.
