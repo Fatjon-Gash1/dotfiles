@@ -29,16 +29,50 @@ prefix_rule(
     match = ["git checkout -- ."],
 )
 
+# Branch-aware enforcement (allow --force-with-lease on short-lived branches,
+# block every force variant on main/master, resolve the real target branch,
+# avoid false positives like "fix/main-x") lives in .codex/hooks/bash-guard.sh.
+# prefix_rule only matches argv prefixes, so these are a coarse defense-in-depth
+# layer covering the most common argument orders only.
+
+prefix_rule(
+    pattern = ["git", "push", "--force"],
+    decision = "forbidden",
+    justification = "Bare --force is never allowed; use --force-with-lease on short-lived branches.",
+    match = ["git push --force", "git push --force origin feature"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", "-f"],
+    decision = "forbidden",
+    justification = "Bare -f force-push is never allowed; use --force-with-lease.",
+    match = ["git push -f", "git push -f origin feature"],
+)
+
 prefix_rule(
     pattern = ["git", "push", "origin", "main", "--force"],
     decision = "forbidden",
-    justification = "Never force-push the main branch.",
+    justification = "Never force-push the default branch (main), even with --force-with-lease.",
     match = ["git push origin main --force"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", "origin", "main", "--force-with-lease"],
+    decision = "forbidden",
+    justification = "Never force-push the default branch (main), even with --force-with-lease.",
+    match = ["git push origin main --force-with-lease"],
 )
 
 prefix_rule(
     pattern = ["git", "push", "origin", "master", "--force"],
     decision = "forbidden",
-    justification = "Never force-push the master branch.",
+    justification = "Never force-push the default branch (master), even with --force-with-lease.",
     match = ["git push origin master --force"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", "origin", "master", "--force-with-lease"],
+    decision = "forbidden",
+    justification = "Never force-push the default branch (master), even with --force-with-lease.",
+    match = ["git push origin master --force-with-lease"],
 )
