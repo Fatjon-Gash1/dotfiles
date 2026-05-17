@@ -18,6 +18,23 @@ esac
 # branch is resolved from the refspec, or from HEAD when none is given, so a
 # branch merely *named* like "fix/main-x" is not mistaken for the default and
 # "git push --force" while checked out on main is still caught.
+#
+# Strip heredoc bodies and quoted strings before scanning, so that
+# `git push --force` appearing as a string literal inside an echo, heredoc,
+# or script body does not trigger a false positive.
+_guard_awk=$(cat <<'AWKEOF'
+BEGIN { h=0; m="" }
+!h && /<</ {
+    t = $0; sub(/.*<<-?['"]*/,"",t); sub(/['" \t].*/,"",t)
+    if (t != "") { m = t; h = 1; sub(/<<.*/,""); print; next }
+}
+h && $0 == m { h = 0; next }
+h            { next }
+{ print }
+AWKEOF
+)
+_scan="$(printf '%s\n' "$cmd" | awk "$_guard_awk" \
+         | sed "s/'[^']*'//g; s/\"[^\"]*\"//g")"
 while IFS= read -r seg; do
   [ -z "$seg" ] && continue
   echo "$seg" | grep -Eq -- '--force|(^|[[:space:]])-[A-Za-z]*f[A-Za-z]*([[:space:]]|$)' || continue
@@ -47,7 +64,7 @@ while IFS= read -r seg; do
     deny "bare force-push to '${dst:-?}'; use --force-with-lease on short-lived branches"
   fi
 done <<EOF
-$(echo "$cmd" | grep -oE '\bgit\b[^&|;]*\bpush\b[^&|;]*')
+$(printf '%s\n' "$_scan" | grep -oE '\bgit\b[^&|;]*\bpush\b[^&|;]*')
 EOF
 
 echo "$cmd" | grep -Eq 'git\s+reset\s+--hard'      && deny "git reset --hard"
