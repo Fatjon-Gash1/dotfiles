@@ -1,14 +1,9 @@
 ## Configs are for:
 
--   i3 - Tiling window manager.
--   picom - Xorg display compositor.
--   Polybar - Highly customizable status bar.
--   alacritty - fast GPU-accelerated terminal.
+-   alacritty - Fast GPU-accelerated terminal.
 -   fish (shell) + fisher + starship (customizable prompt).
--   Neovim - Vim fork (Fully configured with LSPs, Linters,
-    Parsers, Auto-Complete, and a bunch of plugins).
--   rofi - Application launcher and dmenu replacement.
--   ranger - Terminal file manager.
+-   Neovim - Vim fork (fully configured with LSPs, linters,
+    parsers, auto-complete, and a bunch of plugins).
 -   tmux - Terminal multiplexer.
 
 These are some of the tools that I use and have customized for my development workflow.
@@ -20,8 +15,8 @@ These are some of the tools that I use and have customized for my development wo
 ## Usage:
 
 ```
-$ git clone https://github.com/Fatjon-Gash1/dotfiles.git ~/.dotfiles
-$ ~/.dotfiles/install.sh
+$ git clone https://github.com/Fatjon-Gash1/dotfiles.git ~/dotfiles
+$ ~/dotfiles/install.sh
 ```
 
 > [!WARNING]
