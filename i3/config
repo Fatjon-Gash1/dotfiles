@@ -2,12 +2,12 @@ set $mod Mod4
 set $terminal alacritty
 set $fmanager alacritty -e ranger
 set $menu rofi -show drun -display-drun ""
-set $lock i3lock -e -f -c 000000
+set $lock i3lock -n -e -c 000000
 
 font pango:Source Code Pro 10
 
 exec --no-startup-id dex --autostart --envirnment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- $lock
 exec --no-startup-id nm-applet
 exec_always --no-startup-id picom
 exec_always --no-startup-id sh -c "killall -q polybar; polybar"
@@ -31,7 +31,7 @@ bindsym XF86AudioMute $mute
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym Mod1+Shift+e exec --no-startup-id $fmanager
 bindsym --release $mod+Shift+p exec xcolor | tr -d '\n' | xclip -selection clipboard
-bindsym $mod+Shift+z exec $lock
+bindsym Ctrl+Shift+l exec $lock
 bindsym $mod+Return exec --no-startup-id $terminal
 bindsym Mod1+space exec --no-startup-id $menu
 
