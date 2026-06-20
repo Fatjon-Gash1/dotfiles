@@ -3,8 +3,10 @@
     "allow": [
       "WebSearch",
       "WebFetch(domain:docs.claude.com)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
+  "model": "opus",
   "hooks": {
     "PreToolUse": [
       {
@@ -54,5 +56,6 @@
     "mode": "hold"
   },
   "theme": "dark",
+  "skipAutoPermissionPrompt": true,
   "voiceEnabled": false
 }
