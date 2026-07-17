@@ -9,6 +9,7 @@ font pango:Source Code Pro 10
 exec --no-startup-id dex --autostart --envirnment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- $lock
 exec --no-startup-id nm-applet
+exec --no-startup-id greenclip daemon
 exec_always --no-startup-id picom
 exec_always --no-startup-id sh -c "killall -q polybar; polybar"
 
@@ -34,6 +35,8 @@ bindsym --release $mod+Shift+p exec xcolor | tr -d '\n' | xclip -selection clipb
 bindsym Ctrl+Shift+l exec $lock
 bindsym $mod+Return exec --no-startup-id $terminal
 bindsym Mod1+space exec --no-startup-id $menu
+bindsym $mod+v exec --no-startup-id \
+rofi -modi "clipboard:greenclip print" -show clipboard
 
 # sticky mode
 bindsym Ctrl+s sticky toggle
