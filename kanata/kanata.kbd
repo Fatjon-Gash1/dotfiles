@@ -1,0 +1,46 @@
+(defvar
+  tt 170
+  ht 170
+)
+
+(defcfg
+  process-unmapped-keys yes
+  linux-dev-names-include (
+    "Pebble K380s"
+  )
+  tap-hold-require-prior-idle 150
+)
+
+(defsrc
+  caps a s d f h j k l ; spc
+)
+
+(defalias
+  esc (tap-hold-release $tt $ht esc (caps-word 2000))
+
+  a  (tap-hold-tap-keys $tt $ht a lmet (s d f))
+  s  (tap-hold-tap-keys $tt $ht s lalt (a d f))
+  d  (tap-hold-tap-keys $tt $ht d lctl (a s f))
+  f  (tap-hold-tap-keys $tt $ht f lsft (a s d))
+
+  j  (tap-hold-tap-keys $tt $ht j rsft (k l ;))
+  k  (tap-hold-tap-keys $tt $ht k rctl (j l ;))
+  l  (tap-hold-tap-keys $tt $ht l ralt (j k ;))
+  sc (tap-hold-tap-keys $tt $ht ; rmet (j k l))
+
+  nav (tap-hold-release $tt $ht spc (layer-while-held navigation))
+)
+
+(deflayer base
+  @esc
+  @a @s @d @f
+  h @j @k @l @sc
+  @nav
+)
+
+(deflayer navigation
+  _
+  _ _ _ _
+  left down up rght _
+  _
+)

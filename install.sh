@@ -15,6 +15,7 @@ lns ~/dotfiles/fish      ~/.config/fish
 lns ~/dotfiles/nvim      ~/.config/nvim
 lns ~/dotfiles/rofi      ~/.config/rofi
 lns ~/dotfiles/feh       ~/.config/feh
+lns ~/dotfiles/kanata    ~/.config/kanata
 
 lns ~/dotfiles/code-flags.conf ~/.config/code-flags.conf
 lns ~/dotfiles/starship.toml   ~/.config/starship.toml
