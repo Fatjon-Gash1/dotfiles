@@ -10,7 +10,7 @@
 -   rofi - Application launcher and dmenu replacement.
 -   ranger - Terminal file manager.
 -   feh - Wallpaper setter.
--   xremap - Key remapper.
+-   kanata - Key remapper (home row mods, caps-word, navigation layer).
 -   tmux - Terminal multiplexer.
 -   Claude Code (`.claude/`) and Codex CLI (`.codex/`) agent tooling.
 

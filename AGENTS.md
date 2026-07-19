@@ -5,7 +5,7 @@
 This repository stores personal Linux dotfiles and agent configuration. Top-level
 directories map directly to target config locations, usually under `~/.config`.
 Examples: `i3/`, `polybar/`, `picom/`, `alacritty/`, `fish/`, `nvim/`,
-`ranger/`, `rofi/`, and `feh/`. Shared single-file configs live at the root,
+`ranger/`, `rofi/`, `feh/`, and `kanata/`. Shared single-file configs live at the root,
 such as `starship.toml`, `.tmux.conf`, `.xinitrc`, `.prettierrc`, and
 `reflector.conf`. Agent-related files are grouped under `.claude/`, `.codex/`,
 and `.agents/`. Images and other visual assets belong in `images/`.

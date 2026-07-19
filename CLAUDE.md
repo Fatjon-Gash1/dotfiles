@@ -8,7 +8,7 @@ Personal dotfiles for an Arch Linux + i3 setup. The repo is checked out to `~/do
 
 ## Layout / what each top-level dir is
 
-Plain config dirs symlinked to `~/.config/<name>`: `i3`, `polybar`, `picom`, `ranger`, `alacritty`, `fish`, `nvim`, `rofi`, `feh`. Loose files symlinked individually: `code-flags.conf`, `starship.toml`, `.tmux.conf`, `.xinitrc`, `.prettierrc`, `reflector.conf` (root-owned, into `/etc/xdg/reflector`).
+Plain config dirs symlinked to `~/.config/<name>`: `i3`, `polybar`, `picom`, `ranger`, `alacritty`, `fish`, `nvim`, `rofi`, `feh`, `kanata`. Loose files symlinked individually: `code-flags.conf`, `starship.toml`, `.tmux.conf`, `.xinitrc`, `.prettierrc`, `reflector.conf` (root-owned, into `/etc/xdg/reflector`).
 
 Agent tooling configs are organized to be shared across CLIs:
 
