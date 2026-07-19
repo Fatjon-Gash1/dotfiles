@@ -25,12 +25,14 @@ dosfstools 4.2-5
 efibootmgr 18-4
 ex-vi-compat 2-1
 eza 0.23.5-2
+fd 10.4.2-2
 feh 3.12.2-1
 ffnvcodec-headers 13.0.19.0-1
 filezilla 3.70.6-1
 firefox 152.0.6-1
 fish 4.8.1-1
 flatpak 1:1.18.0-1
+fzf 0.74.0-1
 git 2.55.0-1
 git-filter-repo 2.47.0-3
 github-cli 2.96.0-1
@@ -109,6 +111,7 @@ rofi-greenclip 4.2-3
 rsync 3.4.4-1
 rtl8821ce-dkms-git 1.0.5.r188.g4e6b887-1
 rust 1:1.97.1-1
+sd 1.1.0-1
 shutter 0.99.7-2
 snapd 2.76-1
 sof-firmware 2025.12.2-1
