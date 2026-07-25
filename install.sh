@@ -26,6 +26,9 @@ lns ~/dotfiles/.prettierrc     ~/.prettierrc
 [ -L /etc/xdg/reflector/reflector.conf ] && sudo rm /etc/xdg/reflector/reflector.conf
 sudo ln -s ~/dotfiles/reflector.conf /etc/xdg/reflector/reflector.conf
 
+[ -L /etc/X11/xorg.conf.d/00-keyboard.conf ] && sudo rm /etc/X11/xorg.conf.d/00-keyboard.conf
+sudo ln -s ~/dotfiles/00-keyboard.conf /etc/X11/xorg.conf.d/00-keyboard.conf
+
 # Claude Code: ~/.claude/ (docs: code.claude.com)
 #   agents/         subagents
 #   skills/         skills invoked with /name (each is a dir with SKILL.md)
