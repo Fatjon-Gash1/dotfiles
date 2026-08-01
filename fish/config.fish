@@ -8,9 +8,6 @@ alias rd rmdir
 alias t touch
 alias fv 'nvim $(fzf)'
 alias ll 'exa --header --long --extended --group-directories-first --no-user --no-permissions --icons=auto'
-alias rbackup 'sudo rsync -aAXHS --numeric-ids --delete --delete-excluded --info=progress2 \
-  --exclude={"/data/***","/dev/***","/proc/***","/sys/***","/tmp/***","/run/***","/mnt/***","/media/***","/lost+found","/swapfile","/var/tmp/***","/var/cache/pacman/pkg/***","/var/lib/systemd/coredump/***","/home/*/.cache/***"} \
-  / /data/backup/'
 alias v nvim
 alias s startx
 alias gs 'git status'
