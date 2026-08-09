@@ -31,7 +31,10 @@ bindsym XF86AudioLowerVolume $vol_down
 bindsym XF86AudioMute $mute
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym Mod1+Shift+e exec --no-startup-id $fmanager
-bindsym --release $mod+Shift+p exec xcolor | tr -d '\n' | xclip -selection clipboard
+bindsym --release $mod+Ctrl+c exec xcolor | tr -d '\n' | xclip -selection clipboard
+bindsym --release $mod+p exec --no-startup-id shutter --select
+bindsym $mod+Shift+p exec --no-startup-id shutter --active
+bindsym $mod+Ctrl+p exec --no-startup-id ~/.config/i3/scripts/monitor-sc-select
 bindsym Ctrl+Shift+l exec $lock
 bindsym $mod+Return exec --no-startup-id $terminal
 bindsym Mod1+space exec --no-startup-id $menu

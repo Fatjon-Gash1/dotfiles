@@ -1,0 +1,15 @@
+#!/bin/sh
+
+choice=$(printf '%s\n' \
+    "Monitor:0" \
+    "Monitor:1" \
+    | rofi -dmenu -i -p "Which monitor?")
+
+case "$choice" in
+    "Monitor:0")
+        shutter --select=0,0,1680,1050
+        ;;
+    "Monitor:1")
+        shutter --select=1680,0,1920,1080
+        ;;
+esac
