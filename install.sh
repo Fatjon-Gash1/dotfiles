@@ -1,4 +1,5 @@
 #!/bin/bash
+ln -s ~/dotfiles/aerospace/ ~/.config
 ln -s ~/dotfiles/alacritty/ ~/.config
 ln -s ~/dotfiles/fish/ ~/.config
 ln -s ~/dotfiles/kanata/ ~/.config

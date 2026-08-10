@@ -1,0 +1,48 @@
+#!/bin/sh
+# Make AeroSpace workspaces behave like i3 on a multi-monitor setup.
+#
+# AeroSpace puts an empty workspace on its *assigned* monitor (the main one, by
+# default), so on a laptop + external setup every unused workspace opens on the
+# built-in display and you can never claim a free one on the external. i3 instead
+# gives an empty workspace to whichever output is currently active.
+#
+# So: a workspace that does not exist yet is handed to the focused monitor, and
+# one that already exists keeps whatever monitor it was created on - switching to
+# it follows it there, same as i3.
+#
+# Usage:
+#   claim-workspace <ws>              switch to <ws>              (i3: $mod+N)
+#   claim-workspace --move-node <ws>  send focused window to <ws> (i3: $mod+Shift+N)
+
+set -e
+
+move_node=false
+if [ "$1" = "--move-node" ]; then
+    move_node=true
+    shift
+fi
+
+ws="$1"
+[ -n "$ws" ] || { echo "usage: ${0##*/} [--move-node] <workspace>" >&2; exit 1; }
+
+# i3: "If you open a new workspace, it will be bound to the screen you created it
+# on." The binding is set once, at creation - so only a workspace that does not
+# exist yet may be claimed. Anything already alive keeps its monitor, including an
+# empty one sitting visible on another display: having claimed it, you can then
+# throw windows at it from anywhere and they land there, not here.
+#
+# 'list-workspaces --monitor all' is exactly that set of live workspaces: those
+# holding windows, those visible on some monitor, and the persistent ones.
+if ! aerospace list-workspaces --monitor all --format '%{workspace}' | grep -qxF "$ws"; then
+    # Claim it before switching, so there is no visible hop - and, for
+    # --move-node, while focus is still on the monitor we are claiming for.
+    aerospace move-workspace-to-monitor \
+        --workspace "$ws" \
+        "$(aerospace list-monitors --focused --format '%{monitor-id}')"
+fi
+
+if [ "$move_node" = true ]; then
+    aerospace move-node-to-workspace "$ws"
+else
+    aerospace workspace "$ws"
+fi

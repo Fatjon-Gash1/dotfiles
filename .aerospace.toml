@@ -4,7 +4,18 @@ config-version = 2
 
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+#
+# Initial workspace placement, the way i3 comes up: 1 on the secondary display,
+# 2 on the primary one. This is a one-off nudge rather than
+# [workspace-to-monitor-force-assignment], which would re-pin them forever - here
+# they can still be swapped later with alt-shift-tab, like 'move workspace to
+# output' in i3. The second pattern is the fallback for when no external display
+# is attached.
+after-startup-command = [
+    'move-workspace-to-monitor --workspace 1 secondary main',
+    'move-workspace-to-monitor --workspace 2 main',
+    'workspace 1',
+]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -42,9 +53,10 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
-                         "C", "D", "E", "F", "G", "I", "M", "N", "O", "P", "Q",
-                         "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+#
+# Left empty on purpose. Like i3, no workspace outlives its windows - including 1
+# and 2, which 'after-startup-command' merely places at login rather than pinning.
+persistent-workspaces = []
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -65,16 +77,10 @@ on-mode-changed = []
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 
-[workspace-to-monitor-force-assignment]
-    1 = ['secondary', 'main']
-    2 = ['secondary', 'main']
-    3 = ['secondary', 'main']
-    4 = ['secondary', 'main']
-    5 = ['secondary', 'main']
-    6 = 'main'
-    7 = 'main'
-    8 = 'main'
-    9 = 'main'
+# Deliberately no [workspace-to-monitor-force-assignment]: it is re-applied
+# continuously, which pins a workspace to one monitor for good. i3 only treats
+# 'workspace X output Y' as a preferred output, so the initial placement lives in
+# 'after-startup-command' instead and every workspace stays movable.
 
 [gaps]
     inner.horizontal = 0
@@ -138,70 +144,70 @@ on-mode-changed = []
     alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-1 = 'workspace 1'
-    alt-2 = 'workspace 2'
-    alt-3 = 'workspace 3'
-    alt-4 = 'workspace 4'
-    alt-5 = 'workspace 5'
-    alt-6 = 'workspace 6'
-    alt-7 = 'workspace 7'
-    alt-8 = 'workspace 8'
-    alt-9 = 'workspace 9'
-    alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
-    alt-b = 'workspace B'
-    alt-c = 'workspace C'
-    alt-d = 'workspace D'
-    alt-e = 'workspace E'
-    alt-f = 'workspace F'
-    alt-g = 'workspace G'
-    alt-i = 'workspace I'
-    alt-m = 'workspace M'
-    alt-n = 'workspace N'
-    alt-o = 'workspace O'
-    alt-p = 'workspace P'
-    alt-q = 'workspace Q'
-    alt-r = 'workspace R'
-    alt-s = 'workspace S'
-    alt-t = 'workspace T'
-    alt-u = 'workspace U'
-    alt-v = 'workspace V'
-    alt-w = 'workspace W'
-    alt-x = 'workspace X'
-    alt-y = 'workspace Y'
-    alt-z = 'workspace Z'
+    alt-1 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace 1'
+    alt-2 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace 2'
+    alt-3 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace 3'
+    alt-4 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace 4'
+    alt-5 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace 5'
+    alt-6 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace 6'
+    alt-7 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace 7'
+    alt-8 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace 8'
+    alt-9 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace 9'
+    alt-a = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace A' # In your config, you can drop workspace bindings that you don't need
+    alt-b = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace B'
+    alt-c = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace C'
+    alt-d = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace D'
+    alt-e = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace E'
+    alt-f = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace F'
+    alt-g = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace G'
+    alt-i = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace I'
+    alt-m = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace M'
+    alt-n = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace N'
+    alt-o = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace O'
+    alt-p = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace P'
+    alt-q = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace Q'
+    alt-r = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace R'
+    alt-s = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace S'
+    alt-t = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace T'
+    alt-u = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace U'
+    alt-v = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace V'
+    alt-w = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace W'
+    alt-x = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace X'
+    alt-y = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace Y'
+    alt-z = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace Z'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-shift-1 = 'move-node-to-workspace 1'
-    alt-shift-2 = 'move-node-to-workspace 2'
-    alt-shift-3 = 'move-node-to-workspace 3'
-    alt-shift-4 = 'move-node-to-workspace 4'
-    alt-shift-5 = 'move-node-to-workspace 5'
-    alt-shift-6 = 'move-node-to-workspace 6'
-    alt-shift-7 = 'move-node-to-workspace 7'
-    alt-shift-8 = 'move-node-to-workspace 8'
-    alt-shift-9 = 'move-node-to-workspace 9'
-    alt-shift-a = 'move-node-to-workspace A'
-    alt-shift-b = 'move-node-to-workspace B'
-    alt-shift-c = 'move-node-to-workspace C'
-    alt-shift-d = 'move-node-to-workspace D'
-    alt-shift-e = 'move-node-to-workspace E'
-    alt-shift-f = 'move-node-to-workspace F'
-    alt-shift-g = 'move-node-to-workspace G'
-    alt-shift-i = 'move-node-to-workspace I'
-    alt-shift-m = 'move-node-to-workspace M'
-    alt-shift-n = 'move-node-to-workspace N'
-    alt-shift-o = 'move-node-to-workspace O'
-    alt-shift-p = 'move-node-to-workspace P'
-    alt-shift-q = 'move-node-to-workspace Q'
-    alt-shift-r = 'move-node-to-workspace R'
-    alt-shift-s = 'move-node-to-workspace S'
-    alt-shift-t = 'move-node-to-workspace T'
-    alt-shift-u = 'move-node-to-workspace U'
-    alt-shift-v = 'move-node-to-workspace V'
-    alt-shift-w = 'move-node-to-workspace W'
-    alt-shift-x = 'move-node-to-workspace X'
-    alt-shift-y = 'move-node-to-workspace Y'
-    alt-shift-z = 'move-node-to-workspace Z'
+    alt-shift-1 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node 1'
+    alt-shift-2 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node 2'
+    alt-shift-3 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node 3'
+    alt-shift-4 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node 4'
+    alt-shift-5 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node 5'
+    alt-shift-6 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node 6'
+    alt-shift-7 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node 7'
+    alt-shift-8 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node 8'
+    alt-shift-9 = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node 9'
+    alt-shift-a = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node A'
+    alt-shift-b = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node B'
+    alt-shift-c = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node C'
+    alt-shift-d = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node D'
+    alt-shift-e = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node E'
+    alt-shift-f = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node F'
+    alt-shift-g = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node G'
+    alt-shift-i = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node I'
+    alt-shift-m = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node M'
+    alt-shift-n = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node N'
+    alt-shift-o = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node O'
+    alt-shift-p = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node P'
+    alt-shift-q = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node Q'
+    alt-shift-r = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node R'
+    alt-shift-s = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node S'
+    alt-shift-t = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node T'
+    alt-shift-u = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node U'
+    alt-shift-v = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node V'
+    alt-shift-w = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node W'
+    alt-shift-x = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node X'
+    alt-shift-y = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node Y'
+    alt-shift-z = 'exec-and-forget ~/.config/aerospace/scripts/claim-workspace --move-node Z'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
