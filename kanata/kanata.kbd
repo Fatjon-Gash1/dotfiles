@@ -1,0 +1,46 @@
+(defvar
+  tt 200
+  ht 170
+)
+
+(defcfg
+  process-unmapped-keys yes
+  macos-dev-names-include (
+    "Pebble K380s"
+  )
+  tap-hold-require-prior-idle 150
+)
+
+(defsrc
+  caps a s d f h j k l ; spc
+)
+
+(defalias
+  esc (tap-hold-release $tt $ht esc (caps-word 2000))
+
+  a  (tap-hold-tap-keys $tt $ht a lmet (q w e r t s d f g z x c v b))
+  s  (tap-hold-tap-keys $tt $ht s lalt (q w e r t a d f g z x c v b))
+  d  (tap-hold-tap-keys $tt $ht d lctl (q w e r t a s f g z x c v b))
+  f  (tap-hold-tap-keys $tt $ht f lsft (q w e r t a s d g z x c v b))
+
+  j  (tap-hold-tap-keys $tt $ht j rsft (y u i o p k l ; h n m , . /))
+  k  (tap-hold-tap-keys $tt $ht k rctl (y u i o p j l ; h n m , . /))
+  l  (tap-hold-tap-keys $tt $ht l ralt (y u i o p j k ; h n m , . /))
+  sc (tap-hold-tap-keys $tt $ht ; rmet (y u i o p j k l h n m , . /))
+
+  nav (tap-hold-release $tt $ht spc (layer-while-held navigation))
+)
+
+(deflayer base
+  @esc
+  @a @s @d @f
+  h @j @k @l @sc
+  @nav
+)
+
+(deflayer navigation
+  _
+  _ _ _ _
+  left down up rght _
+  _
+)
