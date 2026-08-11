@@ -7,6 +7,7 @@
   process-unmapped-keys yes
   macos-dev-names-include (
     "Pebble K380s"
+    "Apple Internal Keyboard / Trackpad"
   )
   tap-hold-require-prior-idle 150
 )
