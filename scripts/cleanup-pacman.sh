@@ -1,5 +1,16 @@
 #!/bin/bash
 
+: '
+This is a rescue script that was used to fix pacman'\''s broken state,
+caused from a corrupted system update.
+
+It must be only used if no other solution works to restore pacman'\''s functionality.
+
+Try these first:
+- sudo pacman -D -k # check db integrity
+- sudo pacman -Qk # check for problems with installed package files
+'
+
 directory='/var/lib/pacman/local'
 pkg_pattern='-[0-9]+([.:][0-9]+)*-[0-9]+$'
 
