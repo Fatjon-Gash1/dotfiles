@@ -22,3 +22,4 @@ starship init fish | source
 
 # Created by `pipx` on 2025-02-11 21:59:50
 set PATH $PATH /home/fatjon/.local/bin
+set PATH $PATH /home/fatjon/.cargo/bin
