@@ -18,6 +18,7 @@ vim.opt.backup = false
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "auto"
+vim.opt.exrc = true
 
 -- Local functions
 local auto_save_enabled = true
